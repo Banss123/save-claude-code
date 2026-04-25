@@ -1,0 +1,36 @@
+# 프로젝트 폴더 (별도 관리)
+/1구글SEO/
+/2콘텐츠/
+/3세션공부/
+/4아카이브/
+/5어시스턴트/
+/6앰비언트사운드/
+
+# 시크릿 / 머신별
+.credentials.json
+settings.local.json
+.mcp.json
+
+# 외부 git repo (bootstrap.sh로 클론)
+/superpowers/
+/everything-claude-code/
+/claude-talk-to-figma-mcp/
+
+# 런타임 / 캐시 / 대화기록
+/projects/
+/sessions/
+/shell-snapshots/
+/telemetry/
+/cache/
+/paste-cache/
+/session-env/
+/file-history/
+/tasks/
+/downloads/
+/backups/
+/a/
+history.jsonl
+
+# OS
+.DS_Store
+Thumbs.db
