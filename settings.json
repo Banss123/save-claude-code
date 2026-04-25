@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo $CLAUDE_FILE_PATH | grep -qE '\\.(env|lock)$' && { echo 'BLOCKED: 보호된 파일입니다 (.env, lock 파일은 직접 수정하지 마세요)' >&2; exit 2; } || exit 0",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  },
+  "effortLevel": "xhigh",
+  "autoUpdatesChannel": "latest",
+  "skipDangerousModePermissionPrompt": true
+}

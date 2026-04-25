@@ -1,0 +1,141 @@
+{
+  "current": {
+    "store_name": "맛나치킨 강남점",
+    "sheet_type": "현안",
+    "groups": [
+      {
+        "name": "후라이드",
+        "items": [
+          {"name": "후라이드치킨", "price": 18000, "description": ""},
+          {"name": "반반치킨", "price": 19000, "description": ""}
+        ]
+      },
+      {
+        "name": "양념",
+        "items": [
+          {"name": "양념치킨", "price": 19000, "description": ""},
+          {"name": "간장치킨", "price": 19000, "description": ""},
+          {"name": "매운양념치킨", "price": 19000, "description": ""}
+        ]
+      },
+      {
+        "name": "순살",
+        "items": [
+          {"name": "순살후라이드", "price": 19000, "description": "옵션에 순살양념/순살간장 매몰"},
+          {"name": "순살치킨세트", "price": 24000, "description": ""}
+        ]
+      },
+      {
+        "name": "사이드",
+        "items": [
+          {"name": "치즈볼", "price": 4000, "description": ""},
+          {"name": "콜라 1.25L", "price": 2500, "description": ""}
+        ]
+      }
+    ],
+    "option_groups": []
+  },
+  "proposed": {
+    "store_name": "맛나치킨 강남점",
+    "sheet_type": "가안",
+    "groups": [
+      {
+        "name": "후라이드",
+        "items": [
+          {
+            "name": "후라이드치킨",
+            "price": 18000,
+            "description": "바삭한 튀김옷, 부드러운 살, 가성비 최고의 1마리",
+            "is_changed": true,
+            "change_detail": "리뷰 키워드 반영 설명문 추가"
+          },
+          {
+            "name": "반반치킨",
+            "price": 19000,
+            "description": "후라이드와 양념 반반, 양 많아요 취향저격",
+            "is_changed": true,
+            "change_detail": "리뷰 키워드 반영 설명문 추가"
+          }
+        ]
+      },
+      {
+        "name": "양념",
+        "items": [
+          {
+            "name": "양념치킨",
+            "price": 19000,
+            "description": "진한 양념 소스가 배어있는 부드러운 살, 양 많아요",
+            "is_changed": true,
+            "change_detail": "리뷰 키워드 반영 설명문 추가"
+          },
+          {
+            "name": "간장치킨",
+            "price": 19000,
+            "description": "달콤짭짤 마늘간장 소스, 소스 맛있어요",
+            "is_changed": true,
+            "change_detail": "리뷰 키워드 반영 설명문 추가"
+          },
+          {
+            "name": "매운양념치킨",
+            "price": 19000,
+            "description": "칼칼한 매운맛 양념, 바삭한 튀김옷에 깊은 감칠맛",
+            "is_changed": true,
+            "change_detail": "리뷰 키워드 반영 설명문 추가"
+          }
+        ]
+      },
+      {
+        "name": "순살",
+        "items": [
+          {
+            "name": "순살후라이드",
+            "price": 19000,
+            "description": "담백하면서도 한입에 쏙, 바삭바삭 뼈 없는 만족감",
+            "is_changed": true,
+            "change_detail": "리뷰 키워드 반영 설명문 추가"
+          },
+          {
+            "name": "순살치킨세트",
+            "price": 24000,
+            "description": "순살 기본세트 (치킨+콜라+사이드), 가성비 최고",
+            "is_changed": true,
+            "change_detail": "구성 설명 추가"
+          }
+        ]
+      },
+      {
+        "name": "사이드",
+        "items": [
+          {"name": "치즈볼", "price": 4000, "description": ""},
+          {"name": "콜라 1.25L", "price": 2500, "description": ""}
+        ]
+      },
+      {
+        "name": "[신규] 신메뉴 및 세트",
+        "items": [
+          {
+            "name": "순살양념치킨",
+            "price": 19000,
+            "description": "순살에 진한 양념, 담백+달콤짭짤의 조화 (옵션 매몰 해소, 독립메뉴화)"
+          },
+          {
+            "name": "순살간장치킨",
+            "price": 19000,
+            "description": "순살에 달콤짭짤 마늘간장 (옵션 매몰 해소, 독립메뉴화)"
+          },
+          {
+            "name": "기본세트 (치킨+콜라+치즈볼)",
+            "price": 28000,
+            "description": "대표 치킨 1마리 + 콜라 1.25L + 치즈볼, 한그릇 카테고리 진입 (객단가 28,000원)"
+          },
+          {
+            "name": "프리미엄세트 (치킨+콜라+사이드 2종)",
+            "price": 32000,
+            "description": "대표 치킨 1마리 + 콜라 1.25L + 치즈볼 + 추가 사이드, 프리미엄 구성 (객단가 32,000원)"
+          }
+        ]
+      }
+    ],
+    "option_groups": []
+  }
+}
