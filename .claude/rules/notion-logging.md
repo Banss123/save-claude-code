@@ -1,24 +1,25 @@
 # 노션 로그 저장 상세 규칙
 
-> CLAUDE.md 섹션 0의 상세 포맷·옵션·조회 방법
+> 2026-05-03 업데이트: 로깅은 UserPromptSubmit 훅(비동기)으로 자동 처리됨. Claude가 직접 호출하지 않음.
 
-## 저장 포맷 (2026-04-23 업데이트 — 시간 포함)
+## 저장 방식
 
-- **툴**: `mcp__notion__API-post-page` (개별 통합 "Claude Code", 토큰 방식 — 세션마다 재인증 불필요)
-- **parent**: `{"type": "database_id", "database_id": "4c86dd0a-4d34-41b6-a19f-c6b5c037258f"}` (대화 라이브러리 DB)
-- **properties** (표준 Notion API 형식):
+- **훅**: `~/.claude/hooks/notion-save.py` — UserPromptSubmit 시 async 실행 (Claude 응답 속도에 영향 없음)
+- **DB**: `4c86dd0a-4d34-41b6-a19f-c6b5c037258f` (대화 라이브러리)
+- **타입 자동 감지**: 키워드 기반 (질문/지시/피드백/기타)
+- **프로젝트 자동 감지**: cwd 경로 기반
+- **에러 로그**: `~/.claude/hooks/notion-error.log`
 
-| 필드 | 타입 | 포맷 |
-|---|---|---|
-| 제목 | title | `{"title": [{"text": {"content": "앞 30자"}}]}` |
-| 일시 | date | `{"date": {"start": "2026-04-23T17:03:26+09:00"}}` — ISO 8601 + KST(+09:00), **날짜+시간 필수** |
-| 원문 | rich_text | `{"rich_text": [{"text": {"content": "메시지 전문"}}]}` |
-| 프로젝트 | multi_select | `{"multi_select": [{"name": "2콘텐츠"}, {"name": "기타"}]}` |
-| 타입 | select | `{"select": {"name": "지시"}}` |
-| 소스 | select | `{"select": {"name": "PC"}}` |
-| 태그 | multi_select | 등록된 옵션만 허용 (자동 추가 불가, 비어있으면 필드 생략) |
+## 저장 필드
 
-**현재 시간 구하기**: bash `date +"%Y-%m-%dT%H:%M:%S%:z"` 실행 (출력 예: `2026-04-23T17:03:26+09:00`). 저장 직전에 매번 새로 구해서 `일시` 필드에 삽입.
+| 필드 | 내용 |
+|---|---|
+| 제목 | 메시지 앞 30자 |
+| 일시 | ISO 8601 + KST |
+| 원문 | 메시지 전문 (최대 2000자) |
+| 프로젝트 | cwd 경로 자동 감지 |
+| 타입 | 키워드 자동 감지 |
+| 소스 | PC (고정) |
 
 ## 옵션 값
 

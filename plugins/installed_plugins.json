@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "plugins": {
+    "supabase@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\반민성\\.claude\\plugins\\cache\\claude-plugins-official\\supabase\\0.1.6",
+        "version": "0.1.6",
+        "installedAt": "2026-05-05T09:18:40.214Z",
+        "lastUpdated": "2026-05-05T09:18:40.214Z",
+        "gitCommitSha": "693a17a9970ba96e01afb9bef060d1dca48463ba"
+      }
+    ]
+  }
+}

@@ -2,33 +2,24 @@
 
 ## 핵심 원칙
 
-나는 중간관리자이자 최종 의사결정자다.
-너는 나의 시니어 어시스턴트로서, 독단적으로 행동하지 않고 나와 협업한다.
+사용자가 최종 의사결정자. 독단 행동 금지, 큰 결정 전 컨펌 필수.
 
 ---
 
-## 0. 노션 로그 저장 (최우선)
-
-매 메시지마다 **생각하기 전에** 노션 DB에 기록. 성공 시 침묵, 실패 시에만 보고.
-
-- 툴: `mcp__notion__API-post-page`
-- parent: `{"type":"database_id","database_id":"4c86dd0a-4d34-41b6-a19f-c6b5c037258f"}`
-- properties: 제목 / 일시 / 원문 / 타입 / 소스 / 프로젝트 (표준 Notion API 형식)
-- 상세 포맷·옵션·조회·접근 범위: `.claude/rules/notion-logging.md`
-
----
-
-## 1. 업무 수신 프로세스 (5단계)
+## 1. 업무 수신 프로세스 (7단계)
 
 | Step | 내용 | 상세 |
 |---|---|---|
-| 1 | 업무 인지 확인 | `.claude/rules/workflow-intake.md` |
-| 2 | 스킬/에이전트 탐색 | `.claude/rules/workflow-skill-scan.md` |
-| 3 | 실행 계획 수립 | `.claude/rules/workflow-planning.md` |
-| 4 | 단계별 실행 | `.claude/rules/workflow-execution.md` |
-| 5 | 리뷰 및 피드백 | `.claude/rules/workflow-review.md` |
+| 1 | Think — 가설 검증 (forcing questions) | `.claude/rules/workflow-think.md` |
+| 2 | 업무 인지 확인 | `.claude/rules/workflow-intake.md` |
+| 3 | 스킬/에이전트 탐색 | `.claude/rules/workflow-skill-scan.md` |
+| 4 | 실행 계획 수립 (+ 4-way 리뷰) | `.claude/rules/workflow-planning.md` |
+| 5 | 단계별 실행 | `.claude/rules/workflow-execution.md` |
+| 6 | 리뷰 및 피드백 | `.claude/rules/workflow-review.md` |
+| 7 | Reflect — 주간 회고 | `.claude/rules/workflow-reflect.md` |
 
-코딩 작업은 Superpowers TDD 워크플로우 준수. 비코딩도 동일 5단계 적용.
+코딩 작업은 Superpowers TDD 워크플로우 준수. 비코딩도 동일 7단계 적용.
+Step 1(Think)과 Step 7(Reflect)은 단순 작업에선 생략 가능. Step 2~6은 메인 흐름.
 
 ---
 
@@ -52,12 +43,19 @@
 - `.claude/rules/templates.md` — 작업 템플릿
 - `.claude/rules/notion-logging.md` — 노션 로그 저장 상세
 - `.claude/rules/shortcuts.md` — 단축어 해석 규칙 (승인/프로세스/특수 명령)
+- `.claude/rules/workflow-think.md` — Step 1: Think (forcing questions)
+- `.claude/rules/workflow-intake.md` — Step 2: 업무 인지 확인
+- `.claude/rules/workflow-skill-scan.md` — Step 3: 스킬/에이전트 탐색
+- `.claude/rules/workflow-planning.md` — Step 4: 계획 수립 (+ 4-way 리뷰)
+- `.claude/rules/workflow-execution.md` — Step 5: 단계별 실행
+- `.claude/rules/workflow-review.md` — Step 6: 리뷰 및 피드백
+- `.claude/rules/workflow-reflect.md` — Step 7: 주간 회고
 
 ---
 
 ## 4. 프로젝트별 CLAUDE.md
 
-프로젝트 고유 신원·타겟·톤·DoD·금지어 등은 각 프로젝트 루트 CLAUDE.md에서 정의.
+프로젝트 고유 신원·타겟·톤·DoD·금지어·페르소나 등은 각 프로젝트 루트 CLAUDE.md에서 정의.
 
 - `.claude/1구글SEO/CLAUDE.md`
 - `.claude/2콘텐츠/CLAUDE.md`
@@ -65,5 +63,22 @@
 - `.claude/4아카이브/CLAUDE.md`
 - `.claude/5어시스턴트/CLAUDE.md`
 - `.claude/6앰비언트사운드/CLAUDE.md`
+- `.claude/7비즈하이Saas/CLAUDE.md` — BizHigh SalesOps (Next.js 16 + Supabase 기반 매장 관리 SaaS, 코딩 프로젝트)
 
 해당 프로젝트 작업 시 루트 CLAUDE.md를 먼저 읽고 규칙을 적용한다.
+
+---
+
+## 5. 4-way 리뷰 페르소나 (글로벌 디폴트)
+
+Step 4(계획 수립)에서 복잡한 계획을 4명의 페르소나로 압박 테스트한다.
+**프로젝트 CLAUDE.md에 페르소나 정의가 있으면 그걸 우선 사용**, 없으면 아래 디폴트.
+
+| 페르소나 | 시각 | 핵심 질문 |
+|---|---|---|
+| **CEO** | 비즈니스 임팩트, 우선순위 | 지금 이게 진짜 다음 한 수인가? 더 중요한 게 있지 않나? |
+| **엔지니어** | 기술 타당성, 복잡도 | 이게 가장 단순한 방식인가? 더 작은 슬라이스 없나? |
+| **디자이너** | UX, 사용자 경험 | 사용자가 직관적으로 쓸 수 있나? 마찰점은? |
+| **DevEx** | 유지보수성, 자동화 가능성 | 6개월 후의 내가 이걸 이해할까? 재사용 가능한가? |
+
+라우팅: 작업 성격에 따라 1~3명만 호출 가능 (`workflow-planning.md` 참조).

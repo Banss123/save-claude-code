@@ -1,4 +1,5 @@
 {
+  "respectGitignore": false,
   "hooks": {
     "PreToolUse": [
       {
@@ -11,9 +12,24 @@
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python ~/.claude/hooks/notion-save.py",
+            "async": true
+          }
+        ]
+      }
     ]
+  },
+  "enabledPlugins": {
+    "supabase@claude-plugins-official": true
   },
   "effortLevel": "xhigh",
   "autoUpdatesChannel": "latest",
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true
 }
