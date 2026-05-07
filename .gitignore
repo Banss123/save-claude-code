@@ -36,8 +36,9 @@ history.jsonl
 Thumbs.db
 
 # 추가 (2026-05-05): 별도 repo + 캐시·로그
-7비즈하이Saas/
+7SaaS/
 plugins/cache/
 mcp-needs-auth-cache.json
 *.log
 hooks/
+.last-cleanup
