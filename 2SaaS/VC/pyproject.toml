@@ -1,0 +1,25 @@
+[project]
+name = "valuechain"
+version = "0.1.0"
+description = "배달 컨설팅 온보딩 자동화 파이프라인"
+requires-python = ">=3.11"
+dependencies = [
+    "python-docx>=1.1.0",
+    "openpyxl>=3.1.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.4.0",
+]
+scraper = [
+    "playwright>=1.45.0",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

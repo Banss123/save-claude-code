@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Pretendard Variable — layout.tsx의 <head>에서 <link> 태그로 로드 (CSS @import은 Tailwind v4 처리 순서 문제로 부적합) */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans:
+    "Pretendard Variable", "Pretendard",
+    -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", system-ui,
+    "Segoe UI", "Helvetica Neue", "Malgun Gothic",
+    sans-serif;
+  --font-mono: var(--font-geist-mono, ui-monospace), ui-monospace, monospace;
+  --font-heading: var(--font-sans);
+  /* 해병듀오 브랜드·의미 색 토큰 (Marine Navy + Sky 액션) */
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-urgent: var(--urgent);
+  --color-urgent-bg: var(--urgent-bg);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* ─── Surface ─────────────────────────────────────── */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.02 250);          /* 검정 대신 약간 네이비 톤 */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 250);
+
+  /* ─── Brand & Action (해병 Orange + Sky) ──────────── */
+  /* brand = 사이드바 로고 BizHigh 텍스트 색 (해병 주황) */
+  --brand: oklch(0.71 0.18 50);                 /* Orange 500 — 사용자 요청 */
+  --brand-foreground: oklch(0.99 0 0);
+  /* primary = 1순위 액션 버튼·활성 인디케이터 (해병듀오 "딸깍 색") */
+  --primary: oklch(0.55 0.16 244);              /* Sky 600 */
+  --primary-foreground: oklch(0.99 0 0);
+  /* secondary = 보조 표면 (카드 톤 변형) */
+  --secondary: oklch(0.97 0.01 252);
+  --secondary-foreground: oklch(0.30 0.07 252);
+  /* muted = 비활성·캡션 */
+  --muted: oklch(0.97 0.005 250);
+  --muted-foreground: oklch(0.50 0.02 250);
+  /* accent = 호버·포커스 링 */
+  --accent: oklch(0.95 0.02 240);
+  --accent-foreground: oklch(0.30 0.07 252);
+
+  /* ─── Semantic (의미 색) ──────────────────────────── */
+  --urgent:     oklch(0.58 0.22 25);            /* Red 600 */
+  --urgent-bg:  oklch(0.97 0.02 25);            /* Red 50  */
+  --warning:    oklch(0.66 0.16 70);            /* Amber 600 */
+  --warning-bg: oklch(0.98 0.04 80);            /* Amber 50 */
+  --info:       oklch(0.66 0.16 240);           /* Sky 500 */
+  --info-bg:    oklch(0.97 0.03 240);           /* Sky 50  */
+  --success:    oklch(0.60 0.14 155);           /* Emerald 600 */
+  --success-bg: oklch(0.97 0.03 155);           /* Emerald 50 */
+  --destructive: oklch(0.58 0.22 25);           /* = urgent (시각 일치) */
+
+  /* ─── Border / Input / Ring ──────────────────────── */
+  --border: oklch(0.92 0.005 250);
+  --input: oklch(0.92 0.005 250);
+  --ring: oklch(0.55 0.16 244);                 /* primary와 동일 — 포커스 가시성 */
+
+  /* ─── Chart (의미 색 시리즈로 매핑) ───────────────── */
+  --chart-1: oklch(0.55 0.16 244);              /* primary */
+  --chart-2: oklch(0.60 0.14 155);              /* success */
+  --chart-3: oklch(0.66 0.16 70);               /* warning */
+  --chart-4: oklch(0.58 0.22 25);               /* urgent */
+  --chart-5: oklch(0.50 0.02 250);              /* neutral */
+
+  --radius: 0.625rem;
+
+  /* ─── Sidebar (흰색 유지 + 활성 인디케이터만 brand) ─── */
+  --sidebar: oklch(0.99 0.003 250);
+  --sidebar-foreground: oklch(0.25 0.04 252);
+  --sidebar-primary: oklch(0.30 0.07 252);      /* brand */
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.95 0.03 244);       /* hover/active subtle */
+  --sidebar-accent-foreground: oklch(0.30 0.07 252);
+  --sidebar-border: oklch(0.92 0.005 250);
+  --sidebar-ring: oklch(0.55 0.16 244);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}

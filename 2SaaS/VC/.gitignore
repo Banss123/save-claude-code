@@ -1,0 +1,125 @@
+# ==============================
+# Python
+# ==============================
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# ==============================
+# 시크릿 / 환경변수
+# ==============================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.json
+credentials.json
+
+# ==============================
+# 매장 계정 / 세션 / storage_state
+# ==============================
+accounts/
+accounts.csv
+accounts.csv.txt
+*accounts*.csv
+*accounts*.txt
+sessions/
+storage_state*
+*_storage_state.json
+
+# ==============================
+# 실제 고객 데이터 (매장별 결과물)
+# 커밋 금지 — 개인정보/영업정보 포함 가능
+# ==============================
+output/
+data/references/*
+# 목표매출 산정 정본 문서는 프로젝트 권위 문서로 트래킹 (담당자 이식용)
+!data/references/목표매출_산정로직.md
+data/raw/
+data/real/
+data/customer*/
+*_가안.json
+*_가안.xlsx
+*_가안.docx
+*_현안.json
+*_현안.xlsx
+*_솔루션.json
+*_솔루션_AI*.json
+*_솔루션_계획서.docx
+
+# ==============================
+# Claude Code 로컬 설정 / 세션
+# ==============================
+.claude/*
+# 프로젝트 에이전트·스킬·슬래시 커맨드는 트래킹 (담당자 이식용)
+!.claude/agents/
+!.claude/skills/
+!.claude/commands/
+!.claude/README.md
+
+# ==============================
+# 로그 / 임시
+# ==============================
+*.log
+tmp/
+temp/
+.tmp/
+
+# ==============================
+# IDE / OS
+# ==============================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==============================
+# PDF 변환 캐시 (재생성 가능)
+# ==============================
+pdf_images/
+
+# ==============================
+# Playwright 아티팩트
+# ==============================
+.playwright-mcp/
+playwright-report/
+test-results/
+
+# ==============================
+# 샘플 데이터 — 대흥육회 가안만 포함 (정형화된 템플릿 참조용)
+# 나머지 샘플 전부 제외
+# ==============================
+data/samples/*
+!data/samples/대흥육회_menu_plan.json
+# test_docx_builder 가 참조하는 합성 샘플 (실매장 데이터 아님)
+!data/samples/더피플버거_sample.json
+!data/samples/더피플버거_sample_e_case.json
+
+# ==============================
+# 별개 프로젝트 파일 (vc-automation repo와 무관)
+# ==============================
+apps_script_meta_db_sync.gs
+
+# ==============================
+# 임시 분석 아티팩트 (재생성 가능)
+# ==============================
+tasks/endpoint-extract-raw.txt
+tasks/yml-timeline.txt
+tasks/checklist_images/
+tasks/probe_*
+tasks/login_page.html
+tasks/probe_results/

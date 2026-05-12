@@ -1,0 +1,21 @@
+{
+  "case_id": "pasta_anseong_2025q1",
+  "shop_name": "양식매장_B",
+  "cuisine": "양식",
+  "location": "경기 안성시 공도읍",
+  "consulting_start": "2025-01-15",
+  "consulting_months": 6,
+  "revenue": {
+    "baseline": 9500000,
+    "month_3": 11800000,
+    "month_6": 13300000,
+    "month_12": null
+  },
+  "interventions": [
+    "1인분 메뉴 신설",
+    "객단가 조정 — 세트 구성 개편",
+    "쿠팡이츠 CMG 광고 도입"
+  ],
+  "outcome": "partial",
+  "notes": "요기요 6개월 2배 사례 벤치마크. 현재 6개월 1.4배 진행."
+}

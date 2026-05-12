@@ -9,11 +9,6 @@
 settings.local.json
 .mcp.json
 
-# 외부 git repo (bootstrap.sh로 클론)
-/superpowers/
-/everything-claude-code/
-/claude-talk-to-figma-mcp/
-
 # 런타임 / 캐시 / 대화기록
 /projects/
 /sessions/
@@ -33,7 +28,7 @@ history.jsonl
 .DS_Store
 Thumbs.db
 
-# 추가 (2026-05-05): 별도 repo + 캐시·로그
+# 캐시·로그·빌드 결과
 plugins/cache/
 mcp-needs-auth-cache.json
 *.log
@@ -41,3 +36,19 @@ hooks/notion-queue/
 .last-cleanup
 image-cache/
 usage-data/
+
+# 의존성 (Mac에서 재설치)
+**/node_modules/
+
+# Python 캐시
+**/__pycache__/
+**/*.pyc
+
+# 빌드 결과 (재빌드 가능) — claude-talk-to-figma-mcp/dist 는 예외로 추적
+**/.next/
+2SaaS/**/dist/
+4HyperFrames/**/dist/
+
+# Windows 전용
+*.vbs
+*.bat

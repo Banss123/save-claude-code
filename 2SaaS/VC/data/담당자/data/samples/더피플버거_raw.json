@@ -1,0 +1,895 @@
+{
+  "store_name": "더피플버거",
+  "cuisine_type": "버거",
+  "date": "26.03.27.",
+  "consultant_notes": "빠르게 계약해야 매출 올라가는 구조. 자연스럽게 매출이 올라갈 수 있는 부분도 있어 업주의 컨설팅 니즈와 성향 파악 필요. 매출이 매우 낮아서 주문 취소율 98% 이상 필수.",
+  "current_metrics": {
+    "monthly_revenue_note": "매출이 매우 낮음",
+    "cvr_note": "타 패스트푸드 매장보다 전환율이 낮음",
+    "order_acceptance_rate_note": "주문 취소율 98% 이상 필수 (= 주문 수락율 관리 필수)"
+  },
+  "store_metadata": {
+    "has_brand_logo": false,
+    "has_announcement": false,
+    "has_menu_collection_photo": false,
+    "store_intro_note": "가게소개 문구 개선 여지 있음",
+    "min_order_amount_note": "인하 가능한지 확인 필요. 타 패스트푸드보다 높을 가능성."
+  },
+  "fee_structure": {
+    "tier1": {
+      "threshold_manwon": 2200,
+      "rate": "3%",
+      "description": "월매출 2,200만원 이상"
+    },
+    "tier2": {
+      "threshold_manwon": 3000,
+      "rate": "5%",
+      "description": "월매출 3,000만원 이상"
+    },
+    "no_fee_condition": "목표 매출 미달성 시 수수료 미발생"
+  },
+  "ad_strategy": {
+    "baemin_cpc": 351,
+    "baemin_cpc_note": "CPC 351원 즉시 집행",
+    "baemin_budget": 2000000,
+    "baemin_budget_note": "예산 200만원 증액",
+    "coupang_cmg_new": "11%",
+    "coupang_cmg_repeat": "5%",
+    "coupang_note": "쿠팡이츠 광고 11%/5% 세팅"
+  },
+  "current_menu": {
+    "groups": [
+      {
+        "name": "(신메뉴) 푸짐한 1인 한우 버거 Set",
+        "items": [
+          {
+            "name": "버거 + 크리스피 순살치킨 4조각 + 감자튀김 + 음료",
+            "price": "16,500원",
+            "description": "버거(클래식) + 크리스피 순살치킨 4조각 + 감자튀김 + 음료",
+            "note": "(사진은 더피플버거 사진입니다. 헷갈리지마세요~)"
+          }
+        ]
+      },
+      {
+        "name": "더피플버거 5주년 감사할인",
+        "items": [
+          {
+            "name": "더피플버거 감사이벤트",
+            "price": "",
+            "description": "",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "name": "(신메뉴) 버거 + 크리스피순살치킨 + 음료",
+        "items": [
+          {
+            "name": "버거 + 크리스피순살치킨 4조각 + 음료",
+            "price": "14,000원",
+            "description": "버거(클래식) + 크리스피순살치킨 4조각 + 음료",
+            "note": "(사진은 더피플버거 사진입니다. 헷갈리지마세요~)"
+          }
+        ]
+      },
+      {
+        "name": "버거 + 버팔로봉 + 음료 Set",
+        "items": [
+          {
+            "name": "버거 + 버팔로봉 4조각 + 음료",
+            "price": "14,000원",
+            "description": "버거(클래식) + 버팔로봉 4조각 + 음료",
+            "note": "(사진은 더피플버거 사진입니다. 헷갈리지마세요~)"
+          }
+        ]
+      },
+      {
+        "name": "한우 1++ 등급 Burger",
+        "items": [
+          {
+            "name": "(신메뉴)더블피플버거[프리미엄]",
+            "price": "13,000원",
+            "description": "한우 1++ 최고등급 패티 2장 + 브리오슈 번 + 치즈 2장 + 양파 + 토마토 + 로메인 + 더피플소스",
+            "note": "단백질 보충하고 싶으시면 드세요. 한우 A++ 최고등급 고기 200G이상 들어갔습니다."
+          },
+          {
+            "name": "[한우 1++등급] 클래식 버거 [수제버거]",
+            "price": "7,500원",
+            "description": "한우 최고등급 1++ 패티, 브리오슈번, 적양파, 치즈, 더피플소스",
+            "note": "한우 1++ 최고등급으로 만들어 마이야르 극대화하는 버거 한우 패티의 육즙과 풍미를 많이 느낄 수 있는 클래식한 버거"
+          },
+          {
+            "name": "[한우 1++등급] 스매쉬 버거[수제햄버거]",
+            "price": "7,500원",
+            "description": "한우 최고등급 1++ 패티, 브리오슈번, 치즈, 딜피클, 적양파 조금, 더스매쉬소스",
+            "note": "한우 1++ 최고등급으로 만들어 마이야르 극대화하는 버거 아메리칸의 전형적인 버거 맛"
+          },
+          {
+            "name": "[한우 1++등급] 더피플버거",
+            "price": "8,500원",
+            "description": "한우 최고등급 1++ 패티, 브리오슈번, 양파, 치즈, 로메인, 토마토, 더피플소스",
+            "note": "한우 1++ 최고등급으로 만들어 마이야르 극대화하는 버거 더피플버거의 시그니쳐 버거."
+          },
+          {
+            "name": "[한우 1++등급] 더불고기버거",
+            "price": "8,500원",
+            "description": "한우 최고등급 1++패티, 브리오슈번, 로메인, 생양파, 치즈, 불고기소스",
+            "note": "한우 1++ 최고등급으로 만들어 마이야르 극대화하는 버거 불고기버거 말이 필요있습니까"
+          },
+          {
+            "name": "[한우 1++ 등급] 베이컨치즈버거",
+            "price": "9,500원",
+            "description": "한우 최고등급 1++ 패티, 브리오슈번, 양파, 치즈 2장, 로메인, 토마토, 베이컨, 더피플소스",
+            "note": "한우 1++ 최고등급으로 만들어 마이야르 극대화하는 버거 더피플버거에 베이컨과 치즈1장 추가~~ 찐합니다~~"
+          },
+          {
+            "name": "[한우 1++등급] 더 바베큐버거",
+            "price": "9,500원",
+            "description": "한우 최고등급 1++ 패티, 브리오슈번, 양파, 치즈, 로메인, 토마토, 깻잎, 바베큐소스, 마요네즈",
+            "note": "한우 1++ 최고등급으로 만들어 마이야르 극대화하는 버거 깻잎과 바베큐소스가 만났다."
+          },
+          {
+            "name": "[한우 1++ 등급] 갈릭 아이올리버거",
+            "price": "10,500원",
+            "description": "한우 최고등급 1++ 패티, 브리오슈번, 양파, 치즈, 로메인, 수제갈릭아이올리 소스, 해쉬브라운, 마늘후레이크",
+            "note": "한우 1++ 최고등급으로 만들어 마이야르 극대화하는 버거 더피플버거의 신메뉴~"
+          },
+          {
+            "name": "(신메뉴)멕시칸 살사 버거",
+            "price": "13,500원 (할인 9,400원)",
+            "description": "한우 1++ 최고등급 패티 1장 + 브리오슈 번 + 치즈 + 양파 + 로메인 + 딜피클 + 치즈소스 + 스파이시 살사소스",
+            "note": "멕시칸 타코의 느낌을 버거로 느껴보세요~~ 매콤하니. 해장으로 딱입니다~~~~~"
+          },
+          {
+            "name": "(신메뉴)클래식 치킨 버거",
+            "price": "12,500원 (할인 8,500원)",
+            "description": "닭다리살 치킨 패티 + 브리오슈 번 + 양파 + 로메인 + 바베큐 마요소스",
+            "note": "두툼한 100% 닭다리살을 크리스피한 파우더를 입혀 만든 수제 치킨패티"
+          },
+          {
+            "name": "(신메뉴)스파이시 치킨 버거",
+            "price": "12,500원 (할인 8,600원)",
+            "description": "닭다리살 치킨 패티 + 브리오슈 번 + 양파 + 로메인 + 스파이시치킨 소스 + 슈프림마요소스",
+            "note": "달달구리하며 매콤한 양념치킨이 버거에 딱~~~~"
+          }
+        ]
+      },
+      {
+        "name": "한우 1++ 등급 Burger Set",
+        "items": [
+          {
+            "name": "[한우 1++등급]더블피플버거 세트",
+            "price": "17,500원",
+            "description": "버거+프렌치프라이+음료",
+            "note": "패티 2장 + 치즈 2장의 녹진한 버거 세트~~"
+          },
+          {
+            "name": "[한우 1++ 등급] 클래식버거 세트",
+            "price": "12,000원",
+            "description": "버거+프렌치프라이+음료",
+            "note": "할라피뇨는 제공되지 않습니다."
+          },
+          {
+            "name": "[한우 1++등급] 더스매쉬버거세트",
+            "price": "12,000원",
+            "description": "버거+프렌치프라이+음료",
+            "note": "할라피뇨는 제공되지 않습니다."
+          },
+          {
+            "name": "[한우 1++등급] 더피플버거세트",
+            "price": "13,000원",
+            "description": "버거+프렌치프라이+음료",
+            "note": "할라피뇨는 제공되지 않습니다."
+          },
+          {
+            "name": "[한우 1++등급] 더바베큐버거세트",
+            "price": "14,000원",
+            "description": "버거+프렌치프라이+음료",
+            "note": ""
+          },
+          {
+            "name": "[한우 1++등급] 갈릭아이올리버거 세트",
+            "price": "15,000원",
+            "description": "버거+프렌치프라이+음료",
+            "note": ""
+          },
+          {
+            "name": "(신메뉴)멕시칸 살사 버거세트",
+            "price": "(할인적용중)",
+            "description": "버거+프렌치프라이+음료",
+            "note": ""
+          },
+          {
+            "name": "(신메뉴)클래식 치킨버거 세트",
+            "price": "(할인적용중)",
+            "description": "버거+프렌치프라이+음료",
+            "note": ""
+          },
+          {
+            "name": "(신메뉴)스파이시 치킨버거 세트",
+            "price": "(할인적용중)",
+            "description": "버거+프렌치프라이+음료",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "name": "Hot Dog",
+        "items": [
+          {
+            "name": "[클래식]플레인 핫도그",
+            "price": "5,500원",
+            "description": "핫도그 번 + 세블락소시지 + 딜피클 + 양파 찹 + 플레인 소스(머스타드, 케찹, 마요네즈)",
+            "note": "합리적인 가격으로 가장 기본적인 핫도그의 맛을 느끼고 싶은 분 강추~"
+          },
+          {
+            "name": "[특제소스]더피플 핫도그",
+            "price": "6,500원",
+            "description": "핫도그 번 + 세블락소시지 + 로메인 + 양파 찹 + 딜피클 + 더피플소스 + 화이트소스",
+            "note": "시그니처 더피플버거의 사촌 격인 더피플 핫도그~~ 드셔보세요~ 극강의 맛입니다."
+          },
+          {
+            "name": "[달달꾸덕]갈릭 아이올리 핫도그",
+            "price": "6,500원",
+            "description": "핫도그 번 + 세블락소시지 + 양파 찹 + 딜피클 + 시즈닝갈릭후레이크 + 갈릭 아이올리소스",
+            "note": "갈릭을 좋아하는 사람들에게 딱 맞춤인 핫도그~~~~~~"
+          },
+          {
+            "name": "살사 치즈 핫도그",
+            "price": "6,500원",
+            "description": "핫도그 번 + 세블락소시지 + 양파 찹 + 딜피클 + 스파이시 살사소스 + 옐로우 치즈 소스",
+            "note": "꽤 맵습니다~~ 근데 녹진하고 맛있습니다. 해장하시고 싶은 분들 강추~"
+          }
+        ]
+      },
+      {
+        "name": "Side Menu",
+        "items": [
+          {
+            "name": "더피플 한우 프라이즈 [한우 1++ 등급]",
+            "price": "12,900원",
+            "description": "",
+            "note": "든든한 양의 감자튀김에 한우패티 게다가 특제 피플 소스, 렌치소스 마무리로 양파와 로메인 찹까지 든든한 사이드 메뉴입니다"
+          },
+          {
+            "name": "한우 불고기 프라이즈 [한우 1++ 등급]",
+            "price": "12,900원",
+            "description": "",
+            "note": "한국인이라면 불고기 사랑합시다... 든든한 양의 감자튀김과 한우 패티, 달달한 불고기 소스와 부드러운 마요네즈 마무리로 양파 찹과 깻잎까지"
+          },
+          {
+            "name": "[크리스피]프렌치 프라이즈",
+            "price": "6,000원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "[고기조아]베이컨 치즈 프라이즈",
+            "price": "7,000원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "[강력한]스웟 칠리치즈 프라이즈",
+            "price": "7,000원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "[달달의왕]갈릭 버터 프라이즈",
+            "price": "7,000원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "뿌링치즈 시즈닝 프라이즈",
+            "price": "7,000원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "어니언 시즈닝 프라이즈",
+            "price": "7,000원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "허니버터 시즈닝 프라이즈",
+            "price": "7,000원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "[이걸안먹다니]치즈스틱 2p",
+            "price": "2,500원",
+            "description": "치즈스틱 2개",
+            "note": "쫀득하게 늘어나는 짭짤한 모짜렐라 치즈스틱"
+          },
+          {
+            "name": "[NEW]버팔로봉 2p",
+            "price": "3,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "[NEW]버팔로봉 4p",
+            "price": "6,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "[NEW]버팔로봉 8p",
+            "price": "12,000원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "[맛도리]버팔로윙 3p",
+            "price": "4,500원",
+            "description": "버팔로윙 3개",
+            "note": ""
+          },
+          {
+            "name": "[바삭바삭]어니언링 5p",
+            "price": "2,500원",
+            "description": "고소한 양파가 안에, 바삭한 맛",
+            "note": ""
+          },
+          {
+            "name": "[육즙팡팡]팝만두 7p",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "[바삭바삭]해쉬브라운 1p",
+            "price": "1,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "[바삭바삭]맛감자 10p",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "할라피뇨",
+            "price": "500원",
+            "description": "",
+            "note": ""
+          }
+        ]
+      },
+      {
+        "name": "Drink",
+        "items": [
+          {
+            "name": "코카콜라 355ml",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "코카콜라 제로 355ml",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "펩시 라임 제로",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "스프라이트 355ml",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "스프라이트 제로",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "환타 오렌지 355ml",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "환타 파인애플 355ml",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "환타 파인애플 제로",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "닥터페퍼 355ml",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "웰치스 포도 355ml",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "웰치스 딸기 355ml",
+            "price": "2,500원",
+            "description": "",
+            "note": ""
+          },
+          {
+            "name": "물 500ml",
+            "price": "1,500원",
+            "description": "",
+            "note": ""
+          }
+        ]
+      }
+    ],
+    "total_groups": 9,
+    "total_items": 59
+  },
+  "option_groups": [
+    {
+      "name": "찜+후기약속  [최대1개]",
+      "items": [
+        {
+          "name": "저희는 고객님들이 작성해주신 후기를 기다립니당",
+          "attribute": "선택",
+          "extra_price": "0원"
+        },
+        {
+          "name": "약속) 버팔로봉 2조각",
+          "attribute": "",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "약속) 버팔로윙 2조각",
+          "attribute": "",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "약속) 크리스피순살치킨 2조각",
+          "attribute": "",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "약속) 치즈스틱 2조각",
+          "attribute": "",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "약속) 해쉬브라운 1조각",
+          "attribute": "",
+          "extra_price": "500원"
+        },
+        {
+          "name": "약속) 팝만두 3조각",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "약속) 맛감자 5조각",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "약속) 버거세트 주문시만 갈릭버터프라이 소스업그레이드",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "약속) 버거세트 주문시만 칠리치즈프라이 소스업그레이드",
+          "attribute": "",
+          "extra_price": "0원"
+        }
+      ]
+    },
+    {
+      "name": "치킨 선택  [필수·최소1·최대1]",
+      "items": [
+        {
+          "name": "크리스피 순살치킨 4조각",
+          "attribute": "필수선택",
+          "extra_price": "0원"
+        },
+        {
+          "name": "뿌링치즈 시즈닝 순살치킨 4조각",
+          "attribute": "",
+          "extra_price": "900원"
+        },
+        {
+          "name": "어니언 시즈닝 순살치킨 4조각",
+          "attribute": "",
+          "extra_price": "900원"
+        },
+        {
+          "name": "허니버터 시즈닝 순살치킨 4조각",
+          "attribute": "",
+          "extra_price": "900원"
+        }
+      ]
+    },
+    {
+      "name": "버거메뉴 선택  [필수·최소1·최대1]",
+      "items": [
+        {
+          "name": "클래식버거(생양파)",
+          "attribute": "필수선택",
+          "extra_price": "0원"
+        },
+        {
+          "name": "클래식버거(구운양파)",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "스매쉬버거",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "더피플버거(생양파)",
+          "attribute": "",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "더피플버거(구운양파)",
+          "attribute": "",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "불고기버거",
+          "attribute": "",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "베이컨치즈버거(생양파)",
+          "attribute": "",
+          "extra_price": "2,000원"
+        },
+        {
+          "name": "베이컨치즈버거(구운양파)",
+          "attribute": "",
+          "extra_price": "2,000원"
+        },
+        {
+          "name": "바베큐버거(생양파)",
+          "attribute": "",
+          "extra_price": "2,000원"
+        },
+        {
+          "name": "바베큐버거(구운양파)",
+          "attribute": "",
+          "extra_price": "2,000원"
+        },
+        {
+          "name": "갈릭아이올리버거",
+          "attribute": "",
+          "extra_price": "3,000원"
+        }
+      ]
+    },
+    {
+      "name": "양파 굽기 선택  [필수·최소1·최대1]",
+      "items": [
+        {
+          "name": "생양파",
+          "attribute": "필수선택",
+          "extra_price": "0원"
+        },
+        {
+          "name": "구운양파",
+          "attribute": "",
+          "extra_price": "0원"
+        }
+      ]
+    },
+    {
+      "name": "프렌치프라이 선택  [필수·최소1·최대1]",
+      "items": [
+        {
+          "name": "프렌치프라이즈",
+          "attribute": "필수선택",
+          "extra_price": "0원"
+        },
+        {
+          "name": "[강츄강츄]칠리치즈프라이즈",
+          "attribute": "",
+          "extra_price": "900원"
+        },
+        {
+          "name": "[고기러버]베이컨치즈프라이즈",
+          "attribute": "",
+          "extra_price": "900원"
+        },
+        {
+          "name": "[매출급증]갈릭버터프라이즈",
+          "attribute": "",
+          "extra_price": "900원"
+        },
+        {
+          "name": "(감자튀김)뿌링치즈시즈닝",
+          "attribute": "",
+          "extra_price": "900원"
+        },
+        {
+          "name": "(감자튀김)어니언시즈닝",
+          "attribute": "",
+          "extra_price": "900원"
+        },
+        {
+          "name": "(감자튀김)허니버터시즈닝",
+          "attribute": "",
+          "extra_price": "900원"
+        }
+      ]
+    },
+    {
+      "name": "사이드 메뉴 추가  [최대11개]",
+      "items": [
+        {
+          "name": "[대박]버팔로윙 3조각+1조각 총 4조각",
+          "attribute": "선택",
+          "extra_price": "4,500원"
+        },
+        {
+          "name": "[인기]어니언링 5조각+1조각 총 6조각",
+          "attribute": "",
+          "extra_price": "2,500원"
+        },
+        {
+          "name": "[곁들임최고]더피플프라이즈",
+          "attribute": "",
+          "extra_price": "12,900원"
+        },
+        {
+          "name": "[불고기조아]한우불고기프라이즈",
+          "attribute": "",
+          "extra_price": "12,900원"
+        },
+        {
+          "name": "뿌링치즈 시즈닝 프라이즈",
+          "attribute": "",
+          "extra_price": "7,000원"
+        },
+        {
+          "name": "어니언 시즈닝 프라이즈",
+          "attribute": "",
+          "extra_price": "7,000원"
+        },
+        {
+          "name": "허니버터 시즈닝 프라이즈",
+          "attribute": "",
+          "extra_price": "7,000원"
+        },
+        {
+          "name": "[인기급증]칠리 치즈 프라이즈",
+          "attribute": "",
+          "extra_price": "7,000원"
+        },
+        {
+          "name": "[사장님추천]갈릭 버터 프라이즈",
+          "attribute": "",
+          "extra_price": "7,000원"
+        },
+        {
+          "name": "[고기조아]베이컨치즈프라이즈",
+          "attribute": "",
+          "extra_price": "7,000원"
+        },
+        {
+          "name": "[감튀근본]프렌치 프라이즈",
+          "attribute": "",
+          "extra_price": "6,000원"
+        },
+        {
+          "name": "크리스피순살치킨 2p",
+          "attribute": "",
+          "extra_price": "3,000원"
+        },
+        {
+          "name": "크리스피순살치킨 4p",
+          "attribute": "",
+          "extra_price": "5,500원"
+        },
+        {
+          "name": "크리스피순살치킨 8p",
+          "attribute": "",
+          "extra_price": "10,000원"
+        },
+        {
+          "name": "[이걸안먹다니]치즈스틱 2p",
+          "attribute": "",
+          "extra_price": "2,500원"
+        },
+        {
+          "name": "[치킨말고]버팔로봉 2p",
+          "attribute": "",
+          "extra_price": "3,500원"
+        },
+        {
+          "name": "[치킨보단]버팔로봉 4p",
+          "attribute": "",
+          "extra_price": "6,500원"
+        },
+        {
+          "name": "[치킨보다]버팔로봉 8p",
+          "attribute": "",
+          "extra_price": "12,000원"
+        },
+        {
+          "name": "[추억의휴게소]맛감자 10p",
+          "attribute": "",
+          "extra_price": "2,500원"
+        },
+        {
+          "name": "[숨은맛도리]팝만두 7p",
+          "attribute": "",
+          "extra_price": "2,500원"
+        },
+        {
+          "name": "[말해뭐해]해쉬브라운 1p",
+          "attribute": "",
+          "extra_price": "1,500원"
+        },
+        {
+          "name": "할라피뇨",
+          "attribute": "",
+          "extra_price": "500원"
+        }
+      ]
+    },
+    {
+      "name": "토핑 추가  [최대6개]",
+      "items": [
+        {
+          "name": "[강력추천]한우 최고등급 A++ 패티 1장 추가",
+          "attribute": "선택",
+          "extra_price": "4,700원"
+        },
+        {
+          "name": "[고기조아]베이컨 추가",
+          "attribute": "",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "[맛있쟈나]해쉬브라운 추가",
+          "attribute": "",
+          "extra_price": "1,500원"
+        },
+        {
+          "name": "[야채러버]로메인 추가",
+          "attribute": "",
+          "extra_price": "500원"
+        },
+        {
+          "name": "[꾸덕꾸덕]치즈 1장 추가",
+          "attribute": "",
+          "extra_price": "500원"
+        },
+        {
+          "name": "[아삭아삭]생양파 추가",
+          "attribute": "",
+          "extra_price": "500원"
+        },
+        {
+          "name": "[특제소스]구운양파 추가",
+          "attribute": "",
+          "extra_price": "500원"
+        },
+        {
+          "name": "[신선도최강]토마토 추가",
+          "attribute": "",
+          "extra_price": "500원"
+        }
+      ]
+    },
+    {
+      "name": "음료 선택  [필수·최소1·최대1]",
+      "items": [
+        {
+          "name": "코카콜라",
+          "attribute": "필수선택",
+          "extra_price": "0원"
+        },
+        {
+          "name": "코카콜라제로",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "펩시 라임 제로",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "스프라이트",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "스프라이트 제로",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "환타 오렌지",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "환타 파인애플",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "환타 파인애플 제로",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "닥터페퍼",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "웰치스 포도",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "웰치스 포도 제로",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "웰치스 딸기",
+          "attribute": "",
+          "extra_price": "0원"
+        },
+        {
+          "name": "물 500ml",
+          "attribute": "",
+          "extra_price": "0원"
+        }
+      ]
+    }
+  ],
+  "target_revenue": {
+    "target_3pct": 2200,
+    "target_5pct": 3000,
+    "fee_cap": 200,
+    "unit": "만원"
+  },
+  "checklist_status": {
+    "brand_logo": false,
+    "announcement": false,
+    "menu_collection_photo": false,
+    "menu_keyword_optimized": false,
+    "menu_order_optimized": false,
+    "review_event": true,
+    "instant_discount": true,
+    "min_order_optimized": false,
+    "one_bowl_menu": false,
+    "store_intro_content_board": false,
+    "ad_block_keyword": false
+  },
+  "current_promotions": {
+    "baemin_instant_discount": "모든 주문 1,000원 즉시할인",
+    "festa_event": "신규 주문 3,000원 할인 (페스타 진행 중)"
+  }
+}

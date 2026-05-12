@@ -1,0 +1,348 @@
+# 배달 컨설팅 케이스 라이브러리
+# (담당자 경험 반영 가능 — 이 파일만 수정하면 솔루션 자동 변경)
+#
+# 조건 표현(`when`)은 src/knowledge/case_engine.py 의 단순 파서로 평가한다.
+#  - 네스티드 키 접근: metrics.stat.review_count / metrics.now_bar.cook_compliance_pct
+#  - 비교 연산자: ==, !=, <, <=, >, >=
+#  - 리터럴: 숫자, true/false, 문자열(따옴표), null
+#  - 여러 조건을 한 케이스에 두면 AND 결합
+#  - 조건에 쓰인 키가 실제 metrics 에 없으면 "미매칭"으로 간주 (경고만, 예외 없음)
+#
+# priority: high / medium / low
+# category: A 리뷰 / B 광고 / C 메뉴 / D 운영 / E 채널노출 / F 교차 / G 초기매장
+#
+# 섹션 매칭(`section_hint`)은 solution_builder 의 sections[*].title 와 "부분 일치"로 매핑.
+#  실제 섹션 제목: "배민 기본 세팅", "광고 전략: 배민 (CPC)",
+#                  "광고 전략: 쿠팡이츠 (CMG) 신규 진입", "운영 원칙"
+
+# ─────────────────────────────────────────────
+# A. 리뷰 관련
+# ─────────────────────────────────────────────
+
+- id: review-event-missing
+  category: A
+  priority: high
+  when:
+    - metrics.stat.review_event_enabled == false
+  then:
+    suggestion: "리뷰 이벤트 설정으로 초기 리뷰 축적"
+    section_hint: "배민 기본 세팅"
+    rationale: "초기 리뷰 10건 미만 매장은 리뷰 이벤트가 가장 빠른 축적 경로"
+
+- id: review-count-low
+  category: A
+  priority: high
+  when:
+    - metrics.reviews.review_count < 30
+  then:
+    suggestion: "리뷰 이벤트 + 신규 부스트 활용 — 리뷰 30건 돌파 목표"
+    section_hint: "배민 기본 세팅"
+    rationale: "리뷰 30건 미만이면 신뢰 시그널 부족. 이벤트·부스트 병행이 가장 빠른 축적"
+
+- id: review-rating-low
+  category: A
+  priority: high
+  when:
+    - metrics.now_bar.recent_rating < 4.0
+  then:
+    suggestion: "악성 리뷰 분석 + 개선 포인트 도출 → 별점 4.0↑ 회복"
+    section_hint: "운영 원칙"
+    rationale: "별점 4.0 미달은 노출 알고리즘 페널티. 개별 악성 리뷰 원인 분석이 선행"
+
+- id: review-reply-rate-low
+  category: A
+  priority: medium
+  when:
+    - metrics.reviews.reply_rate_pct < 50
+  then:
+    suggestion: "최근 30건 리뷰 일괄 답글 작성"
+    section_hint: "운영 원칙"
+    rationale: "답글률 50% 미만은 CS 관리 인상 약화. 노출 가점에도 불리"
+
+- id: recent-30d-reviews-zero
+  category: A
+  priority: high
+  when:
+    - metrics.reviews.recent_30d_reviews == 0
+  then:
+    suggestion: "30일 리뷰 0건 — 노출/주문 이슈 진단 선행"
+    section_hint: "배민 기본 세팅"
+    rationale: "주문은 있으나 리뷰 0건이면 리뷰 유도 구조(이벤트/쿠폰) 부재 가능성"
+
+- id: photo-review-ratio-low
+  category: A
+  priority: medium
+  when:
+    - metrics.reviews.photo_review_ratio_pct < 20
+  then:
+    suggestion: "사진 리뷰 이벤트 유도 (사진 리뷰 시 추가 혜택)"
+    section_hint: "배민 기본 세팅"
+    rationale: "사진 리뷰는 전환율에 가장 큰 영향. 20% 미만은 개선 여지 큼"
+
+# ─────────────────────────────────────────────
+# B. 광고·마케팅
+# ─────────────────────────────────────────────
+
+- id: cpc-consume-rate-low
+  category: B
+  priority: high
+  when:
+    - metrics.stat.cpc_consume_rate < 0.3
+  then:
+    suggestion: "가게대표·콘텐츠보드 점검 (품질점수 회복) → CTR 회복"
+    section_hint: "광고 전략: 배민 (CPC)"
+    rationale: "CPC 소진율 30% 미만은 품질점수 저하·입찰가 부족 신호"
+
+- id: cpc-high-consume-low-cvr
+  category: B
+  priority: high
+  when:
+    - metrics.stat.cpc_consume_rate > 0.8
+    - metrics.stat.cvr_pct < 5
+  then:
+    suggestion: "상세페이지·가격·리뷰 개선 — 클릭 대비 전환 누수 해결"
+    section_hint: "광고 전략: 배민 (CPC)"
+    rationale: "소진은 많은데 CVR 5% 미만 → 페이지 진입 후 이탈. 랜딩 품질 문제"
+
+- id: instant-discount-missing
+  category: B
+  priority: high
+  when:
+    - metrics.stat.instant_discount_enabled == false
+  then:
+    suggestion: "즉시할인 설정 — 무료배달 필터 노출 전략"
+    section_hint: "광고 전략: 배민 (CPC)"
+    rationale: "즉시할인 미설정은 무료배달 필터·가격 경쟁에서 배제됨"
+
+- id: ultracall-unused
+  category: B
+  priority: medium
+  when:
+    - metrics.stat.ultracall_enabled == false
+  then:
+    suggestion: "울트라콜 활용 — 지역 노출 확대"
+    section_hint: "광고 전략: 배민 (CPC)"
+    rationale: "지역 노출 슬롯 확보에 가장 낮은 장벽. 병행 운영 권장"
+
+- id: coupang-cmg-missing
+  category: B
+  priority: medium
+  when:
+    - metrics.stat.coupang_cmg_enabled == false
+  then:
+    suggestion: "쿠팡이츠 CMG 설정 — 수수료 안전장치 확보"
+    section_hint: "광고 전략: 쿠팡이츠 (CMG) 신규 진입"
+    rationale: "CMG는 수수료 상한. 미설정 시 성수기 수수료 폭증 리스크"
+
+- id: badge-no1-missing
+  category: B
+  priority: medium
+  when:
+    - metrics.stat.badge_no1 == false
+    - metrics.stat.badge_no1_eligible == true
+  then:
+    suggestion: "우리동네 NO.1 배지 조건 충족 유도"
+    section_hint: "광고 전략: 배민 (CPC)"
+    rationale: "배지는 클릭률·신뢰도에 직접 반영. 자격 있으면 우선 확보"
+
+# ─────────────────────────────────────────────
+# C. 메뉴 구성
+# ─────────────────────────────────────────────
+
+- id: top-menu-over-concentrated
+  category: C
+  priority: medium
+  when:
+    - metrics.stat.top1_menu_sales_share_pct > 60
+  then:
+    suggestion: "2·3순위 메뉴 강화 — 대표메뉴 집중 리스크 분산"
+    section_hint: "배민 기본 세팅"
+    rationale: "top1 60%↑ 매장은 대표메뉴 이탈 시 매출 급락 리스크"
+
+- id: menu-count-too-many
+  category: C
+  priority: medium
+  when:
+    - metrics.stat.menu_count > 40
+  then:
+    suggestion: "핵심 메뉴 압축 — 선택 피로 감소 + 운영 효율"
+    section_hint: "배민 기본 세팅"
+    rationale: "메뉴 40개 초과는 선택 피로 + 조리 실수 증가. 핵심 20~30개로 압축 권장"
+
+- id: menu-count-too-few
+  category: C
+  priority: low
+  when:
+    - metrics.stat.menu_count < 5
+  then:
+    suggestion: "세트/사이드 확장 — 객단가·구성 다양성 확보"
+    section_hint: "배민 기본 세팅"
+    rationale: "5개 미만은 선택 폭 부족. 사이드/세트로 객단가 끌어올리기"
+
+- id: menu-photo-missing
+  category: C
+  priority: high
+  when:
+    - metrics.stat.menu_photo_missing_ratio_pct > 20
+  then:
+    suggestion: "전 메뉴 사진 촬영 — 사진 없는 메뉴 비중 20%↑"
+    section_hint: "배민 기본 세팅"
+    rationale: "사진 없는 메뉴는 클릭률 크게 하락. 20% 초과 시 시급"
+
+- id: options-per-menu-low
+  category: C
+  priority: medium
+  when:
+    - metrics.stat.options_per_menu < 2
+  then:
+    suggestion: "사이드·음료·토핑 옵션 추가 — 객단가 향상"
+    section_hint: "배민 기본 세팅"
+    rationale: "메뉴당 옵션 2개 미만이면 객단가 확장 여지 활용 부족"
+
+- id: package-price-not-separated
+  category: C
+  priority: medium
+  when:
+    - metrics.stat.package_price_same_as_delivery == true
+  then:
+    suggestion: "배달 수수료 반영한 배달 전용가 분리 책정"
+    section_hint: "배민 기본 세팅"
+    rationale: "포장·배달 동일가는 배달 수수료 역전 리스크. 분리가 기본"
+
+# ─────────────────────────────────────────────
+# D. 운영 지표
+# ─────────────────────────────────────────────
+
+- id: cook-compliance-low
+  category: D
+  priority: high
+  when:
+    - metrics.now_bar.cook_compliance_pct < 95
+  then:
+    suggestion: "조리시간 설정 재조정 — 운영지수 회복"
+    section_hint: "운영 원칙"
+    rationale: "조리준수율 95% 미만은 노출 알고리즘 페널티. 우선 복구 대상"
+
+- id: cook-time-unrealistic
+  category: D
+  priority: high
+  when:
+    - metrics.now_bar.actual_cook_time_min > metrics.now_bar.set_cook_time_min
+  then:
+    suggestion: "실측 기반 조리시간 재설정 — 설정값 < 실측값 상태"
+    section_hint: "운영 원칙"
+    rationale: "실측이 설정 초과면 준수율 구조적으로 깨짐. 설정값 먼저 현실화"
+
+- id: cancel-rate-high
+  category: D
+  priority: high
+  when:
+    - metrics.stat.cancel_rate_pct > 3
+  then:
+    suggestion: "재고·영업시간 점검 — 취소율 3% 초과"
+    section_hint: "운영 원칙"
+    rationale: "취소율 3%↑는 재고 관리 또는 운영 불안정 신호. 노출 페널티"
+
+- id: peak-hour-closed
+  category: D
+  priority: medium
+  when:
+    - metrics.stat.peak_hour_closed == true
+  then:
+    suggestion: "피크 시간대(점심/저녁) 운영 유도 — 기회 손실"
+    section_hint: "운영 원칙"
+    rationale: "피크 시간대 영업 중단은 주문량 손실뿐 아니라 노출 가점에도 불리"
+
+# ─────────────────────────────────────────────
+# E. 채널·노출
+# ─────────────────────────────────────────────
+
+- id: package-disabled
+  category: E
+  priority: high
+  when:
+    - metrics.stat.package_enabled == false
+  then:
+    suggestion: "포장 주문 활성화 + 포장 할인 세팅 — 수수료 절감 채널"
+    section_hint: "배민 기본 세팅"
+    rationale: "포장은 수수료 무료 구간. 활성화만 해도 순이익 기여"
+
+- id: hero-photo-low-quality
+  category: E
+  priority: high
+  when:
+    - metrics.stat.hero_photo_score < 70
+  then:
+    suggestion: "대표 사진 재촬영 — 품질 점수 70 미만"
+    section_hint: "배민 기본 세팅"
+    rationale: "대표 사진은 CTR 1순위 결정 요인. 품질 70↑ 유지"
+
+- id: intro-text-short
+  category: E
+  priority: low
+  when:
+    - metrics.stat.intro_length < 50
+  then:
+    suggestion: "가게 소개글 작성 — 브랜드 스토리·USP"
+    section_hint: "배민 기본 세팅"
+    rationale: "소개글 50자 미만은 브랜딩 손실. 검색·추천에 간접 영향"
+
+- id: category-mismatch
+  category: E
+  priority: medium
+  when:
+    - metrics.stat.category_mismatch == true
+  then:
+    suggestion: "카테고리 재분류 — 현재 카테고리 부정확"
+    section_hint: "배민 기본 세팅"
+    rationale: "카테고리 부정확은 카테고리 기반 노출에서 배제. 우선 교정"
+
+# ─────────────────────────────────────────────
+# F. 교차 플랫폼
+# ─────────────────────────────────────────────
+
+- id: cross-platform-price-delta
+  category: F
+  priority: high
+  when:
+    - metrics.stat.cross_platform_price_delta_pct > 10
+  then:
+    suggestion: "플랫폼별 가격 정합 — 수수료 역전 방지"
+    section_hint: "광고 전략: 쿠팡이츠 (CMG) 신규 진입"
+    rationale: "플랫폼 간 가격 10% 초과 차이는 고객 혼선 + 수수료 역전 리스크"
+
+- id: active-platform-low
+  category: F
+  priority: medium
+  when:
+    - metrics.stat.active_platform_count < 3
+  then:
+    suggestion: "전 플랫폼 활성화 검토 — 현재 3개 미만"
+    section_hint: "광고 전략: 쿠팡이츠 (CMG) 신규 진입"
+    rationale: "3개 미만 입점은 접근성 손실. 플랫폼별 고객 겹침은 20% 미만"
+
+# ─────────────────────────────────────────────
+# G. 초기 매장 (오픈 30일 미만)
+# ─────────────────────────────────────────────
+
+- id: new-shop-boost-unused
+  category: G
+  priority: high
+  when:
+    - metrics.stat.days_since_open < 30
+    - metrics.stat.boost_used == false
+  then:
+    suggestion: "신규 노출 가점 구간 적극 활용 — 신규 부스트 세팅"
+    section_hint: "광고 전략: 배민 (CPC)"
+    rationale: "오픈 30일 내 부스트는 한정 구간 특권. 놓치면 복구 불가"
+
+- id: new-shop-low-reviews
+  category: G
+  priority: high
+  when:
+    - metrics.stat.days_since_open < 30
+    - metrics.reviews.review_count < 10
+  then:
+    suggestion: "리뷰 이벤트 강도 최대 — 초기 30일 × 리뷰 10건 미만"
+    section_hint: "배민 기본 세팅"
+    rationale: "초기 30일은 리뷰 가점 + 부스트 동시 활용 구간. 이벤트 최대 강도"

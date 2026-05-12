@@ -1,0 +1,21 @@
+{
+  "case_id": "chicken_suwon_2024q4",
+  "shop_name": "치킨매장_A",
+  "cuisine": "치킨",
+  "location": "경기 수원시 영통구",
+  "consulting_start": "2024-10-01",
+  "consulting_months": 12,
+  "revenue": {
+    "baseline": 18000000,
+    "month_3": 24500000,
+    "month_6": 31000000,
+    "month_12": 36800000
+  },
+  "interventions": [
+    "메뉴 전면개편 — 대표메뉴 재설계",
+    "배민 CPC 광고 2배 증액",
+    "리뷰 이벤트 (서비스 음료 증정)"
+  ],
+  "outcome": "success",
+  "notes": "배달앱 도입 후 +33% KDI 벤치마크 참고. 12개월 2배 달성."
+}

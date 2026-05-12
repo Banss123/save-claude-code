@@ -1,0 +1,269 @@
+{
+  "store": {
+    "name": "더피플버거",
+    "business_type": "버거",
+    "location": "서울 강남",
+    "document_date": "26.03.27.목"
+  },
+  "document_title": "솔루션 계획서",
+  "subtitle_suffix": "배달앱 매출 최적화 컨설팅",
+  "core_metrics": [
+    {
+      "label": "현재 월매출",
+      "value": "1,800,000원",
+      "sub_label": "주문 150건, 객단가 12,000원",
+      "is_baseline": true
+    },
+    {
+      "label": "목표 월매출",
+      "value": "4,500,000원",
+      "sub_label": "3개월 ₩2,880,000 → 6개월 ₩3,690,000 → 12개월 ₩4,500,000 (스트레치) | 현재 × 2.5배 — 성장 잠재력 큼 (스트레치)",
+      "is_target": true
+    },
+    {
+      "label": "배민 CPC (예정)",
+      "value": "351원",
+      "sub_label": "버거 업종 표준 · 500원 단계적 상향"
+    },
+    {
+      "label": "재주문",
+      "value": "45건",
+      "sub_label": "재주문률 30% — 업종 평균 20% 대비 강점"
+    }
+  ],
+  "comparison": {
+    "title": "그래서, 배달 앱 이렇게 바뀝니다",
+    "header_label": "지금/앞으로",
+    "rows": [
+      {
+        "category": "메뉴판",
+        "before_lines": [
+          "프리미엄 키워드 미노출, 카테고리 분산 없음",
+          "메뉴 설명문 누락 다수"
+        ],
+        "after_lines": [
+          "1++ 한우 키워드 상단 고정 + 트렌드 분류",
+          "메뉴 설명문 개편 + [1인 실속] 진입 세트"
+        ],
+        "after_first_bold": true
+      },
+      {
+        "category": "광고",
+        "before_lines": [
+          "CPC 미집행, 쿠팡이츠 CMG 미설정"
+        ],
+        "after_lines": [
+          "배민 CPC 351원 + 쿠팡 CMG 11% 동시 집행",
+          "배민클럽 배달팁 할인 활성화"
+        ],
+        "after_first_bold": true
+      },
+      {
+        "category": "운영",
+        "before_lines": [
+          "메뉴 설명 미흡, 사이드 구성 없음",
+          "재주문 단골 기반은 양호"
+        ],
+        "after_lines": [
+          "사이드 3종 추가, 3개월 프로모션 가동",
+          "재주문률 유지하며 신규 유입 확대"
+        ],
+        "after_first_bold": true
+      }
+    ],
+    "footer_quote": "프리미엄 한우 키워드로 검색 노출 최적화 + 광고 집행으로 전환율 상향."
+  },
+  "key_message": "프리미엄 1++ 한우 버거의 강점을 살려, 검색 노출 최적화 + 광고 집행으로 전환율을 끌어올리는 것이 핵심입니다.",
+  "sections": [
+    {
+      "number": 1,
+      "title": "배민 기본 세팅",
+      "items": [
+        {
+          "title": "메뉴모음컷 재배치",
+          "marker": "arrow",
+          "bullets": [
+            "프리미엄 버거 단체샷을 1번 슬롯으로 이동",
+            "현재: 단품 사진 위주 / 변경: 세트 구성 강조 촬영"
+          ]
+        },
+        {
+          "title": "메뉴명 키워드 최적화",
+          "marker": "arrow",
+          "bullets": [
+            "모든 버거 메뉴에 '1++ 한우' 키워드 통일",
+            "불고기버거 → 1++ 한우 불고기버거"
+          ]
+        },
+        {
+          "title": "메뉴 설명문 리뷰 키워드 반영",
+          "marker": "arrow",
+          "bullets": [
+            "고객 리뷰에서 추출한 감각적 표현 삽입",
+            "'육즙 가득', '패티가 두툼', '소스 찐맛' 등 반영"
+          ]
+        },
+        {
+          "title": "리뷰이벤트 배너 등록",
+          "marker": "star",
+          "bullets": [
+            "3단 배너로 사장님 공지 활성화"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "광고 전략: 배민 (CPC)",
+      "items": [
+        {
+          "title": "CPC 입찰가 설정",
+          "marker": "arrow",
+          "bullets": [
+            "초기 351원 진입 → 2주 후 ROAS 모니터링 후 조정",
+            "목표: 500원대 안착, 예산 월 200만원"
+          ]
+        },
+        {
+          "title": "매장명 광고 금지어 등록",
+          "marker": "arrow",
+          "bullets": [
+            "자연 검색 유입 보호를 위해 매장명을 금지어에 추가"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "광고 전략: 쿠팡이츠 (CMG)",
+      "items": [
+        {
+          "title": "CMG 비율 설정",
+          "marker": "star",
+          "bullets": [
+            "신규 11% / 재주문 5%로 설정",
+            "신규 고객 획득에 집중"
+          ]
+        },
+        {
+          "title": "즉시할인 통합",
+          "marker": "arrow",
+          "bullets": [
+            "분산된 쿠폰 → 즉시할인 2,000원 단일 통합"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "운영 원칙",
+      "items": [
+        {
+          "title": "숨김/품절 절대 금지",
+          "marker": "warning",
+          "bullets": [
+            "운영지수 + CTR에 치명적 영향",
+            "운영 불가 메뉴는 사전에 제거"
+          ]
+        },
+        {
+          "title": "조리시간 20분 이하 유지",
+          "marker": "arrow",
+          "bullets": [
+            "접수시간 9초 이하, 조리시간 준수율 95% 이상 목표"
+          ]
+        },
+        {
+          "title": "임시중지/운영시간 변경 금지",
+          "marker": "warning",
+          "bullets": [
+            "로직점수 하락 → 노출 순위 직접 영향"
+          ]
+        }
+      ]
+    }
+  ],
+  "item_numbering": "serial",
+  "fee_structure": {
+    "tiers": [
+      {"label": "1차 목표 매출", "amount": "2,880,000원", "rate_pct": 3},
+      {"label": "2차 목표 매출", "amount": "4,500,000원", "rate_pct": 5}
+    ],
+    "notes": [
+      "후불제: 매출 목표 달성 시에만 수수료 발생",
+      "목표 매출 미달성 시 수수료 없음"
+    ]
+  },
+  "variant": "diagnostic",
+  "tier_plan": {
+    "tier1_3m": {"month": 6, "multiplier": 1.6, "season_factor": 1.0, "target": 2880000},
+    "tier2_6m": {"month": 9, "multiplier": 2.05, "season_factor": 1.0, "target": 3690000},
+    "tier3_12m": {"month": 3, "multiplier": 2.5, "season_factor": 1.0, "target": 4500000}
+  },
+  "tam_meta": {
+    "available": false,
+    "reason": "KAKAO_REST_KEY 미설정 (상권 SHP 미연동)"
+  },
+  "target_meta": {
+    "target_case": "A",
+    "target_case_label": "성장 잠재력 큼 (스트레치)",
+    "target_rationale": "광고 효율 강(우리가게클릭 ROAS 9.2배) + 재주문률 강(평균 20% 대비 +10%p) — 전제조건: 광고비 매출의 5~7% 투입, 메뉴·옵션 전면개편, 6개월 기간 기준",
+    "repeat_pct": 30.0,
+    "repeat_diff_pp": 10.0,
+    "historical_override_used": false,
+    "lever_report": {
+      "store_name": "더피플버거",
+      "cuisine": "한식",
+      "analysis": {
+        "cuisine_benchmark": "한식",
+        "current_ctr_pct": 2.7,
+        "current_cvr_pct": 12.35,
+        "current_aov_won": 12000,
+        "impression_delta": {
+          "short_term_pct": 0.10,
+          "mid_term_pct": 0.30,
+          "basis": "평점 4.6 ≥ 4.5 → 단기 +10% / 중기 +30% (울트라콜·CPC 증설 여력)"
+        },
+        "ctr_delta": {
+          "short_term_pct": 0.15,
+          "mid_term_pct": 0.25,
+          "basis": "CTR 2.70% — 한식 벤치 2.5~4.0% 기준 '중간' → 단기 +15% / 중기 +25%"
+        },
+        "cvr_delta": {
+          "short_term_pct": 0.12,
+          "mid_term_pct": 0.22,
+          "basis": "CVR 12.35% — 한식 벤치 12.0~18.0% 기준 '중간' → 단기 +12% / 중기 +22%"
+        },
+        "aov_delta": {
+          "short_term_pct": 0.05,
+          "mid_term_pct": 0.12,
+          "basis": "객단가 12,000원 — 한식 탄력성 '중간' (최대 +15%) → 단기 +5% / 중기 +12%"
+        }
+      },
+      "targets": {
+        "tier_1_revenue_won": 2677752,
+        "tier_2_revenue_won": 3996720,
+        "tier_1_growth_pct": 48.8,
+        "tier_2_growth_pct": 122.0,
+        "tier_1_probability_pct": 75,
+        "tier_2_probability_pct": 50,
+        "tier_1_monthly_fee_won": 80332,
+        "tier_2_monthly_fee_won": 199836,
+        "fee_cap_ok": true,
+        "adjustment_note": null
+      },
+      "guard_note": null,
+      "sanity_check": {
+        "method": "legacy_multiplier",
+        "case": "A",
+        "multiplier": 2.5,
+        "target_revenue": 4500000,
+        "note": "배수 방식 폴백 참고값 (Case A, 2.5배). 정본은 레버 곱셈 산정."
+      },
+      "disclaimers": [
+        "계절성 미반영 — 담당자 검토 시 season factor 별도 반영",
+        "상권 경쟁도 데이터 미연동 — TAM 추정 전 수동 검토 필요"
+      ]
+    }
+  }
+}

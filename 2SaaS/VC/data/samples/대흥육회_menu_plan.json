@@ -1,0 +1,626 @@
+{
+  "current": {
+    "store_name": "대흥육회",
+    "sheet_type": "현안",
+    "groups": [
+      {
+        "name": "한상세트",
+        "items": [
+          {
+            "name": "육회한상",
+            "price": 54000,
+            "description": "한우육회 150g+육사시미 120g+한우초밥 8ps",
+            "option_group_ids": [
+              1,
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "뭉티기한상",
+            "price": 54000,
+            "description": "한우육회 150g+뭉티기 120g+한우초밥 8ps 뭉티기장1, 기름장1, 흑임자소스1, 노른자1, 육회소스1 김2",
+            "option_group_ids": [
+              1,
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          }
+        ]
+      },
+      {
+        "name": "대표메뉴",
+        "items": [
+          {
+            "name": "뭉티기 200g(중)",
+            "price": 41000,
+            "description": "뭉티기장 2, 기름장 1, 간장1, 김 2",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "뭉티기 250g(대)",
+            "price": 50000,
+            "description": "뭉티기장 2, 기름장 1, 간장1, 김 2",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "뭉티기 300g(특대)",
+            "price": 58000,
+            "description": "뭉티기장 2, 기름장 1, 간장1, 김 2",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "육사시미 200g(중)",
+            "price": 41000,
+            "description": "뭉티기장 2, 기름장 1, 간장 1, 김 2. 알맞게 숙성된 부드러운 육사시미",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "육사시미 250g(대)",
+            "price": 50000,
+            "description": "",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "육사시미 300g(특대)",
+            "price": 58000,
+            "description": "",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "한우육회 200g(중)",
+            "price": 29000,
+            "description": "양념하지 않은 신선한 한우육회. 육회 간장에 찍어 드시는게 가장 맛있고, 필요에 따라 적당량 비벼드세요.",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "한우육회 250g(대)",
+            "price": 34000,
+            "description": "",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "한우육회 300g(특대)",
+            "price": 39000,
+            "description": "",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": false,
+            "change_detail": ""
+          }
+        ]
+      },
+      {
+        "name": "사이드",
+        "items": [
+          {
+            "name": "육회비빔밥",
+            "price": 12000,
+            "description": "새콤한 양념과 신선한 한우 육회비빔밥",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          }
+        ]
+      },
+      {
+        "name": "음료메뉴",
+        "items": [
+          {
+            "name": "칠성사이다 355ml",
+            "price": 2000,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "코카콜라 355ml",
+            "price": 2000,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          }
+        ]
+      },
+      {
+        "name": "주류메뉴",
+        "items": [
+          {
+            "name": "처음처럼",
+            "price": 2500,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "선양 린",
+            "price": 2500,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "새로",
+            "price": 2500,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "카스",
+            "price": 3000,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          }
+        ]
+      }
+    ],
+    "option_groups": [
+      {
+        "name": "초밥 선택",
+        "required": true,
+        "min_select": 1,
+        "max_select": 1,
+        "items": [
+          {
+            "name": "생",
+            "price": 0
+          },
+          {
+            "name": "익힘",
+            "price": 0
+          },
+          {
+            "name": "반반",
+            "price": 0
+          }
+        ]
+      },
+      {
+        "name": "추가 선택",
+        "required": false,
+        "min_select": 0,
+        "max_select": 7,
+        "items": [
+          {
+            "name": "뭉티기장",
+            "price": 300
+          },
+          {
+            "name": "김",
+            "price": 300
+          },
+          {
+            "name": "와사비",
+            "price": 300
+          },
+          {
+            "name": "흑임자소스",
+            "price": 300
+          },
+          {
+            "name": "기름장",
+            "price": 300
+          },
+          {
+            "name": "노른자",
+            "price": 300
+          },
+          {
+            "name": "육회양념",
+            "price": 300
+          }
+        ]
+      },
+      {
+        "name": "리뷰이벤트",
+        "required": false,
+        "min_select": 0,
+        "max_select": 2,
+        "items": [
+          {
+            "name": "별 다섯개는 사랑입니다.",
+            "price": 0
+          },
+          {
+            "name": "중복 선택 가능합니다.",
+            "price": 0
+          },
+          {
+            "name": "리뷰 음식도 진심을 담아 보내드립니다.",
+            "price": 0
+          },
+          {
+            "name": "미니 육회비빔밥",
+            "price": 1000
+          },
+          {
+            "name": "소고기뭇국",
+            "price": 500
+          }
+        ]
+      },
+      {
+        "name": "추가 선택",
+        "required": false,
+        "min_select": 0,
+        "max_select": 2,
+        "items": [
+          {
+            "name": "소면",
+            "price": 1000
+          },
+          {
+            "name": "공기밥",
+            "price": 1000
+          }
+        ]
+      }
+    ]
+  },
+  "proposed": {
+    "store_name": "대흥육회",
+    "sheet_type": "가안",
+    "groups": [
+      {
+        "name": "한상세트",
+        "items": [
+          {
+            "name": "[한우 생고기 3종] 육회한상",
+            "price": 54000,
+            "description": "한우육회 150g+육사시미 120g+한우초밥 8ps",
+            "option_group_ids": [
+              1,
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          },
+          {
+            "name": "[당일도축 한우] 뭉티기한상",
+            "price": 54000,
+            "description": "한우육회 150g+뭉티기 120g+한우초밥 8ps",
+            "option_group_ids": [
+              1,
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          }
+        ]
+      },
+      {
+        "name": "대표메뉴",
+        "items": [
+          {
+            "name": "[당일도축] 한우 뭉티기 200g(중)",
+            "price": 41000,
+            "description": "당일도축 한우 암소 한정판매 · 뭉티기장 2, 기름장 1, 간장1, 김 2",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          },
+          {
+            "name": "[당일도축] 한우 뭉티기 250g(대)",
+            "price": 50000,
+            "description": "당일도축 한우 암소 한정판매 · 뭉티기장 2, 기름장 1, 간장1, 김 2",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          },
+          {
+            "name": "[당일도축] 한우 뭉티기 300g(특대)",
+            "price": 58000,
+            "description": "당일도축 한우 암소 한정판매 · 뭉티기장 2, 기름장 1, 간장1, 김 2",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          },
+          {
+            "name": "[부드러운] 한우 육사시미 200g(중)",
+            "price": 41000,
+            "description": "알맞게 숙성된 부드러운 육사시미 · 뭉티기장 2, 기름장 1, 간장 1, 김 2",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          },
+          {
+            "name": "[부드러운] 한우 육사시미 250g(대)",
+            "price": 50000,
+            "description": "알맞게 숙성된 부드러운 육사시미",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          },
+          {
+            "name": "[부드러운] 한우 육사시미 300g(특대)",
+            "price": 58000,
+            "description": "알맞게 숙성된 부드러운 육사시미",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          },
+          {
+            "name": "[신선] 한우 육회 200g(중)",
+            "price": 29000,
+            "description": "양념하지 않은 신선한 한우육회 · 잡내 없는 고소한 맛",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          },
+          {
+            "name": "[신선] 한우 육회 250g(대)",
+            "price": 34000,
+            "description": "양념하지 않은 신선한 한우육회 · 잡내 없는 고소한 맛",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          },
+          {
+            "name": "[신선] 한우 육회 300g(특대)",
+            "price": 39000,
+            "description": "양념하지 않은 신선한 한우육회 · 잡내 없는 고소한 맛",
+            "option_group_ids": [
+              2,
+              3
+            ],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          }
+        ]
+      },
+      {
+        "name": "사이드",
+        "items": [
+          {
+            "name": "[한우] 육회비빔밥",
+            "price": 12000,
+            "description": "새콤한 양념과 신선한 한우 육회비빔밥",
+            "option_group_ids": [],
+            "is_changed": true,
+            "change_detail": "메뉴명/설명 변경"
+          }
+        ]
+      },
+      {
+        "name": "음료메뉴",
+        "items": [
+          {
+            "name": "칠성사이다 355ml",
+            "price": 2000,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "코카콜라 355ml",
+            "price": 2000,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          }
+        ]
+      },
+      {
+        "name": "주류메뉴",
+        "items": [
+          {
+            "name": "처음처럼",
+            "price": 2500,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "선양 린",
+            "price": 2500,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "새로",
+            "price": 2500,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          },
+          {
+            "name": "카스",
+            "price": 3000,
+            "description": "",
+            "option_group_ids": [],
+            "is_changed": false,
+            "change_detail": ""
+          }
+        ]
+      }
+    ],
+    "option_groups": [
+      {
+        "name": "초밥 선택",
+        "required": true,
+        "min_select": 1,
+        "max_select": 1,
+        "items": [
+          {
+            "name": "생",
+            "price": 0
+          },
+          {
+            "name": "익힘",
+            "price": 0
+          },
+          {
+            "name": "반반",
+            "price": 0
+          }
+        ]
+      },
+      {
+        "name": "추가 선택",
+        "required": false,
+        "min_select": 0,
+        "max_select": 7,
+        "items": [
+          {
+            "name": "뭉티기장",
+            "price": 300
+          },
+          {
+            "name": "김",
+            "price": 300
+          },
+          {
+            "name": "와사비",
+            "price": 300
+          },
+          {
+            "name": "흑임자소스",
+            "price": 300
+          },
+          {
+            "name": "기름장",
+            "price": 300
+          },
+          {
+            "name": "노른자",
+            "price": 300
+          },
+          {
+            "name": "육회양념",
+            "price": 300
+          }
+        ]
+      },
+      {
+        "name": "리뷰이벤트",
+        "required": false,
+        "min_select": 0,
+        "max_select": 2,
+        "items": [
+          {
+            "name": "별 다섯개는 사랑입니다.",
+            "price": 0
+          },
+          {
+            "name": "중복 선택 가능합니다.",
+            "price": 0
+          },
+          {
+            "name": "리뷰 음식도 진심을 담아 보내드립니다.",
+            "price": 0
+          },
+          {
+            "name": "미니 육회비빔밥",
+            "price": 1000
+          },
+          {
+            "name": "소고기뭇국",
+            "price": 500
+          }
+        ]
+      },
+      {
+        "name": "추가 선택",
+        "required": false,
+        "min_select": 0,
+        "max_select": 2,
+        "items": [
+          {
+            "name": "소면",
+            "price": 1000
+          },
+          {
+            "name": "공기밥",
+            "price": 1000
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "store_name": "대흥육회",
+  "cuisine_type": "고기/구이 (육회 전문)",
+  "date": "26.04.10.",
+  "current_menu": {
+    "groups": [
+      {
+        "name": "한상세트",
+        "items": [
+          {
+            "name": "육회한상",
+            "price": "54,000원",
+            "description": "한우육회 150g+육사시미 120g+한우초밥 8ps"
+          },
+          {
+            "name": "뭉티기한상",
+            "price": "54,000원",
+            "description": "한우육회 150g+뭉티기 120g+한우초밥 8ps 뭉티기장1, 기름장1, 흑임자소스1, 노른자1, 육회소스1 김2"
+          }
+        ]
+      },
+      {
+        "name": "대표메뉴",
+        "items": [
+          {
+            "name": "뭉티기 200g(중)",
+            "price": "41,000원",
+            "description": "뭉티기장 2, 기름장 1, 간장1, 김 2"
+          },
+          {
+            "name": "뭉티기 250g(대)",
+            "price": "50,000원",
+            "description": "뭉티기장 2, 기름장 1, 간장1, 김 2"
+          },
+          {
+            "name": "뭉티기 300g(특대)",
+            "price": "58,000원",
+            "description": "뭉티기장 2, 기름장 1, 간장1, 김 2"
+          },
+          {
+            "name": "육사시미 200g(중)",
+            "price": "41,000원",
+            "description": "뭉티기장 2, 기름장 1, 간장 1, 김 2. 알맞게 숙성된 부드러운 육사시미"
+          },
+          {
+            "name": "육사시미 250g(대)",
+            "price": "50,000원",
+            "description": ""
+          },
+          {
+            "name": "육사시미 300g(특대)",
+            "price": "58,000원",
+            "description": ""
+          },
+          {
+            "name": "한우육회 200g(중)",
+            "price": "29,000원",
+            "description": "양념하지 않은 신선한 한우육회. 육회 간장에 찍어 드시는게 가장 맛있고, 필요에 따라 적당량 비벼드세요."
+          },
+          {
+            "name": "한우육회 250g(대)",
+            "price": "34,000원",
+            "description": ""
+          },
+          {
+            "name": "한우육회 300g(특대)",
+            "price": "39,000원",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "사이드",
+        "items": [
+          {
+            "name": "육회비빔밥",
+            "price": "12,000원",
+            "description": "새콤한 양념과 신선한 한우 육회비빔밥"
+          }
+        ]
+      },
+      {
+        "name": "음료메뉴",
+        "items": [
+          {
+            "name": "칠성사이다 355ml",
+            "price": "2,000원",
+            "description": ""
+          },
+          {
+            "name": "코카콜라 355ml",
+            "price": "2,000원",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "주류메뉴",
+        "items": [
+          {
+            "name": "처음처럼",
+            "price": "2,500원",
+            "description": ""
+          },
+          {
+            "name": "선양 린",
+            "price": "2,500원",
+            "description": ""
+          },
+          {
+            "name": "새로",
+            "price": "2,500원",
+            "description": ""
+          },
+          {
+            "name": "카스",
+            "price": "3,000원",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  "option_groups": [
+    {
+      "name": "초밥 선택 [필수, 최소1, 최대1]",
+      "used_by": "육회한상, 뭉티기한상",
+      "items": [
+        {
+          "name": "생",
+          "extra_price": "0원"
+        },
+        {
+          "name": "익힘",
+          "extra_price": "0원"
+        },
+        {
+          "name": "반반",
+          "extra_price": "0원"
+        }
+      ]
+    },
+    {
+      "name": "추가 선택 [최대7개]",
+      "used_by": "육회한상, 뭉티기한상, 뭉티기, 육사시미, 한우육회",
+      "items": [
+        {
+          "name": "뭉티기장",
+          "extra_price": "300원"
+        },
+        {
+          "name": "김",
+          "extra_price": "300원"
+        },
+        {
+          "name": "와사비",
+          "extra_price": "300원"
+        },
+        {
+          "name": "흑임자소스",
+          "extra_price": "300원"
+        },
+        {
+          "name": "기름장",
+          "extra_price": "300원"
+        },
+        {
+          "name": "노른자",
+          "extra_price": "300원"
+        },
+        {
+          "name": "육회양념",
+          "extra_price": "300원"
+        }
+      ]
+    },
+    {
+      "name": "리뷰이벤트 [최대2개]",
+      "used_by": "육회한상, 뭉티기한상, 뭉티기, 육사시미, 한우육회",
+      "items": [
+        {
+          "name": "별 다섯개는 사랑입니다.",
+          "extra_price": "0원"
+        },
+        {
+          "name": "중복 선택 가능합니다.",
+          "extra_price": "0원"
+        },
+        {
+          "name": "리뷰 음식도 진심을 담아 보내드립니다.",
+          "extra_price": "0원"
+        },
+        {
+          "name": "미니 육회비빔밥",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "소고기뭇국",
+          "extra_price": "500원"
+        }
+      ]
+    },
+    {
+      "name": "추가 선택 [최대2개]",
+      "used_by": "(별도)",
+      "items": [
+        {
+          "name": "소면",
+          "extra_price": "1,000원"
+        },
+        {
+          "name": "공기밥",
+          "extra_price": "1,000원"
+        }
+      ]
+    }
+  ],
+  "store_metadata": {
+    "baemin_category": "고기·구이",
+    "baemin_id": "14780201",
+    "brand_name": "대흥육회"
+  },
+  "consultant_notes": "수수료/광고 데이터 없음. 메뉴 데이터만으로 기본 세팅 분석."
+}

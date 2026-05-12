@@ -1,0 +1,339 @@
+const scriptName = "KAKAO";
+
+// Local dev server. For production, replace ENDPOINT with the Vercel URL.
+const ENDPOINT = "http://192.168.10.61:3000/api/integrations/kakao-notifications";
+const TOKEN = "dev-kakao-test-token";
+const DEVICE_ID = "banss-kakao-tablet-01";
+
+const MAX_BATCH_SIZE = 30;
+const MAX_QUEUE_LINES = 2000;
+const RETRY_INTERVAL_MS = 60 * 1000;
+const DUPLICATE_WINDOW_MS = 2500;
+const MAX_MESSAGE_CHARS = 19000;
+
+var appContext = null;
+var retryThreadStarted = false;
+var messageSeq = 0;
+var recentSignatures = {};
+var queueLock = new java.util.concurrent.locks.ReentrantLock();
+
+/**
+ * MessengerBotR entrypoint.
+ *
+ * (string) room
+ * (string) sender
+ * (boolean) isGroupChat
+ * (void) replier.reply(message)
+ * (boolean) replier.reply(room, message, hideErrorToast = false)
+ * (string) imageDB.getProfileBase64()
+ * (string) packageName
+ */
+function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
+  if (packageName !== "com.kakao.talk") return;
+  if (!msg || String(msg).trim().length === 0) return;
+
+  var nowMs = Date.now();
+  var roomText = safeText(room, 300);
+  var senderText = safeText(sender, 160);
+  var messageText = safeText(msg, MAX_MESSAGE_CHARS);
+  if (isDuplicate(roomText, senderText, messageText, nowMs)) return;
+
+  messageSeq += 1;
+  var receivedAt = new Date(nowMs).toISOString();
+  var clientEventId = [
+    DEVICE_ID,
+    String(nowMs),
+    String(messageSeq),
+    String(simpleHash(roomText + "\n" + senderText + "\n" + messageText))
+  ].join(":");
+
+  enqueuePayload({
+    deviceId: DEVICE_ID,
+    clientEventId: clientEventId,
+    eventKey: clientEventId,
+    packageName: packageName,
+    roomTitle: roomText,
+    senderName: senderText,
+    messageText: messageText,
+    postedAt: receivedAt,
+    clientReceivedAt: receivedAt,
+    clientSequence: messageSeq,
+    clientTruncated: String(msg).length > messageText.length
+  });
+
+  flushQueue();
+}
+
+function safeText(value, maxLength) {
+  var text = value == null ? "" : String(value);
+  text = text.replace(/\u0000/g, "").trim();
+  if (text.length > maxLength) return text.substring(0, maxLength);
+  return text;
+}
+
+function isDuplicate(room, sender, msg, nowMs) {
+  var signature = String(simpleHash(room + "\n" + sender + "\n" + msg));
+  var lastAt = recentSignatures[signature] || 0;
+  if (nowMs - lastAt < DUPLICATE_WINDOW_MS) return true;
+
+  recentSignatures[signature] = nowMs;
+  cleanupRecentSignatures(nowMs);
+  return false;
+}
+
+function cleanupRecentSignatures(nowMs) {
+  try {
+    for (var key in recentSignatures) {
+      if (nowMs - recentSignatures[key] > DUPLICATE_WINDOW_MS * 4) {
+        delete recentSignatures[key];
+      }
+    }
+  } catch (ignored) {}
+}
+
+function simpleHash(text) {
+  var hash = 0;
+  if (!text) return hash;
+  for (var i = 0; i < text.length; i++) {
+    hash = ((hash << 5) - hash) + text.charCodeAt(i);
+    hash = hash & hash;
+  }
+  return hash < 0 ? -hash : hash;
+}
+
+function enqueuePayload(payload) {
+  queueLock.lock();
+  try {
+    var file = getQueueFile();
+    var lines = readLines(file);
+    lines.push(JSON.stringify(payload));
+    if (lines.length > MAX_QUEUE_LINES) {
+      lines = lines.slice(lines.length - MAX_QUEUE_LINES);
+    }
+    writeLines(file, lines);
+  } catch (e) {
+    logError("enqueue", e);
+  } finally {
+    queueLock.unlock();
+  }
+}
+
+function flushQueue() {
+  queueLock.lock();
+  try {
+    var file = getQueueFile();
+    var lines = readLines(file);
+    if (lines.length === 0) return;
+
+    var batch = [];
+    var kept = [];
+
+    for (var i = 0; i < lines.length; i++) {
+      var line = String(lines[i] || "").trim();
+      if (!line) continue;
+
+      if (batch.length >= MAX_BATCH_SIZE) {
+        kept.push(line);
+        continue;
+      }
+
+      try {
+        batch.push(JSON.parse(line));
+      } catch (e) {
+        logError("parseQueueLine", e);
+      }
+    }
+
+    if (batch.length === 0) {
+      writeLines(file, kept);
+      return;
+    }
+
+    var body = JSON.stringify({
+      deviceId: DEVICE_ID,
+      clientBatchId: DEVICE_ID + ":" + Date.now() + ":" + messageSeq,
+      events: batch
+    });
+
+    if (postJson(ENDPOINT, TOKEN, body)) {
+      writeLines(file, kept);
+    } else {
+      writeLines(file, lines);
+    }
+  } catch (e) {
+    logError("flush", e);
+  } finally {
+    queueLock.unlock();
+  }
+}
+
+function postJson(url, token, body) {
+  var conn = null;
+
+  try {
+    conn = new java.net.URL(url).openConnection();
+    conn.setRequestMethod("POST");
+    conn.setConnectTimeout(7000);
+    conn.setReadTimeout(10000);
+    conn.setRequestProperty("Content-Type", "application/json; charset=utf-8");
+    conn.setRequestProperty("Authorization", "Bearer " + token);
+    conn.setDoOutput(true);
+
+    var out = new java.io.OutputStreamWriter(conn.getOutputStream(), "UTF-8");
+    out.write(body);
+    out.flush();
+    out.close();
+
+    var status = conn.getResponseCode();
+    drainStream(status >= 400 ? conn.getErrorStream() : conn.getInputStream());
+    return status >= 200 && status < 300;
+  } catch (e) {
+    logError("post", e);
+    return false;
+  } finally {
+    if (conn) conn.disconnect();
+  }
+}
+
+function drainStream(stream) {
+  if (!stream) return;
+
+  var reader = null;
+  try {
+    reader = new java.io.BufferedReader(new java.io.InputStreamReader(stream, "UTF-8"));
+    while (reader.readLine() !== null) {}
+  } catch (e) {
+    logError("drain", e);
+  } finally {
+    try {
+      if (reader) reader.close();
+    } catch (ignored) {}
+  }
+}
+
+function getQueueFile() {
+  var baseDir = null;
+
+  try {
+    if (appContext) baseDir = appContext.getFilesDir();
+  } catch (ignored) {}
+
+  try {
+    if (!baseDir && typeof Api !== "undefined" && Api.getContext) {
+      baseDir = Api.getContext().getFilesDir();
+    }
+  } catch (ignored) {}
+
+  if (!baseDir) {
+    baseDir = new java.io.File("/sdcard/Download");
+  }
+
+  var dir = new java.io.File(baseDir, "banss-kakao-ingest");
+  if (!dir.exists()) dir.mkdirs();
+  return new java.io.File(dir, "queue-v2.jsonl");
+}
+
+function readLines(file) {
+  var lines = [];
+  if (!file.exists()) return lines;
+
+  var reader = null;
+  try {
+    reader = new java.io.BufferedReader(new java.io.FileReader(file));
+    var line = null;
+    while ((line = reader.readLine()) !== null) {
+      lines.push(line);
+    }
+  } finally {
+    if (reader) reader.close();
+  }
+
+  return lines;
+}
+
+function writeLines(file, lines) {
+  var writer = null;
+  try {
+    writer = new java.io.BufferedWriter(new java.io.FileWriter(file, false));
+    for (var i = 0; i < lines.length; i++) {
+      writer.write(String(lines[i]));
+      writer.newLine();
+    }
+  } finally {
+    if (writer) writer.close();
+  }
+}
+
+function queueCount() {
+  queueLock.lock();
+  try {
+    return readLines(getQueueFile()).length;
+  } catch (e) {
+    logError("queueCount", e);
+    return -1;
+  } finally {
+    queueLock.unlock();
+  }
+}
+
+function startRetryThread() {
+  if (retryThreadStarted) return;
+  retryThreadStarted = true;
+
+  try {
+    var thread = new java.lang.Thread(
+      new java.lang.Runnable({
+        run: function() {
+          while (true) {
+            try {
+              flushQueue();
+              java.lang.Thread.sleep(RETRY_INTERVAL_MS);
+            } catch (e) {
+              logError("retry", e);
+              java.lang.Thread.sleep(RETRY_INTERVAL_MS);
+            }
+          }
+        }
+      })
+    );
+    thread.setDaemon(true);
+    thread.start();
+  } catch (e) {
+    logError("startRetryThread", e);
+  }
+}
+
+function logError(where, e) {
+  try {
+    Log.e("KAKAO", where + ": " + e);
+  } catch (ignored) {}
+}
+
+function onCreate(savedInstanceState, activity) {
+  appContext = activity.getApplicationContext();
+  startRetryThread();
+
+  var textView = new android.widget.TextView(activity);
+  textView.setText(
+    "BANSS Kakao ingest v2 is running.\n" +
+    "Device: " + DEVICE_ID + "\n" +
+    "Endpoint: " + ENDPOINT + "\n" +
+    "Queued: " + queueCount()
+  );
+  textView.setTextColor(android.graphics.Color.DKGRAY);
+  activity.setContentView(textView);
+}
+
+function onStart(activity) {
+  startRetryThread();
+  flushQueue();
+}
+
+function onResume(activity) {
+  startRetryThread();
+  flushQueue();
+}
+
+function onPause(activity) {}
+
+function onStop(activity) {}
