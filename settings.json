@@ -18,8 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python ~/.claude/hooks/notion-save.py",
-            "async": true
+            "command": "python ~/.claude/hooks/notion-save.py"
           }
         ]
       }

@@ -1,0 +1,46 @@
+모클락 강남본점 — 리뷰 답변 (2026-04-24)
+총 1건 (1점 방어)
+외국어 답변 하단에 한국어 해석 첨부
+
+===========================================
+[리뷰 1] Amal AlAbbasi (English, 1점 방어)
+원문 요지: 상담 스태프 unfriendly·unprofessional, 영어 소통 어려움, 스태프 짜증·부정적 태도, 서비스 기대 이하, 추천 안 함
+===========================================
+
+--- 리뷰 원본 (영어) ---
+I had a very disappointing experience at Moclock.
+The staff member who did the consultation was unfriendly and unprofessional. Her English was difficult to understand, and when I told her I didn't understand, she became irritated and showed a negative attitude.
+The overall service was below expectations, and I did not feel comfortable or relaxed during the session.
+I would not recommend this place.
+
+--- 리뷰 원본 한국어 해석 ---
+모클락에서 매우 실망스러운 경험을 했습니다.
+상담을 진행한 직원은 불친절하고 전문적이지 않았습니다. 그분의 영어가 알아듣기 어려웠고, 제가 이해가 안 된다고 말하자 짜증을 내며 부정적인 태도를 보였습니다.
+전반적인 서비스는 기대 이하였고, 세션 중에도 편안하거나 릴랙스된 느낌을 받지 못했습니다.
+이곳을 추천하지 않습니다.
+
+--- 답변 (영어, Google 게시용) ---
+Hello 🤍
+Thank you for visiting Moclock in Gangnam.
+
+We're sincerely sorry that your experience did not meet your expectations, especially regarding the communication during your consultation. We will take feedback like yours seriously and look into it more closely. Please kindly reach out to us directly so we can better understand what happened, and we will work with you toward making things right.
+
+✨ Gangnam Head Spa Moclock ✨
+
+--- 답변 한국어 해석 ---
+안녕하세요 🤍
+강남 모클락을 찾아주셔서 감사합니다.
+
+저희 서비스가 기대에 부응하지 못한 점, 특히 상담 중 커뮤니케이션 부분에 대해 진심으로 죄송합니다. 주신 의견을 진지하게 받아들여 더 자세히 살펴보겠습니다. 저희에게 직접 연락 주시면 그날 상황을 함께 정확히 파악하고, 바로잡을 수 있도록 함께 노력하겠습니다.
+
+✨ Gangnam Head Spa Moclock ✨
+
+
+===========================================
+방어 전략 메모
+===========================================
+- 서론/결론 포맷 100% 일치 (store-info.md 영어 기본 포맷 유지)
+- 사과 + 경청 태도 표시, 구체 상황 반박·해명 회피 (공개 공방 방지)
+- 리뷰어 지적 포인트("communication during your consultation") 언급하되 해명 없이 수용
+- 직접 연락 유도로 비공개 채널 전환
+- 1점 Template A (에버피부과 참고) 원칙 준용

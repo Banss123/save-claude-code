@@ -1,13 +1,11 @@
-# 프로젝트 폴더 (별도 관리)
-/1구글SEO/
-/2콘텐츠/
-/3세션공부/
-/4아카이브/
-/5어시스턴트/
-/6앰비언트사운드/
+# 프로젝트 폴더 (Mac 이전 제외 목록)
+/6아카이브/
+/7어시스턴트/
+/8앰비언트사운드/
 
 # 시크릿 / 머신별
 .credentials.json
+.secrets.json
 settings.local.json
 .mcp.json
 
@@ -36,9 +34,10 @@ history.jsonl
 Thumbs.db
 
 # 추가 (2026-05-05): 별도 repo + 캐시·로그
-7SaaS/
 plugins/cache/
 mcp-needs-auth-cache.json
 *.log
-hooks/
+hooks/notion-queue/
 .last-cleanup
+image-cache/
+usage-data/

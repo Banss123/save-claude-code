@@ -1,0 +1,13 @@
+{
+  "name": "8hyperframes",
+  "version": "0.1.0",
+  "private": true,
+  "description": "영상 그래픽 자동화 인프라 — HyperFrames 마스터 템플릿 (1구글SEO/2콘텐츠/5어시스턴트/6앰비언트사운드 공용)",
+  "scripts": {
+    "doctor": "hyperframes doctor",
+    "render": "hyperframes render"
+  },
+  "devDependencies": {
+    "hyperframes": "^0.5.3"
+  }
+}

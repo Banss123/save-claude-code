@@ -1,0 +1,14 @@
+{
+  "max_gap_seconds": 0.25,
+  "silence_threshold_db": -30,
+  "min_silence_duration": 0.4,
+  "padding": 0.04,
+  "video_quality": 18,
+  "preset": "medium",
+
+  "_presets_참고": {
+    "메타광고_빠른템포": { "max_gap_seconds": 0.10, "min_silence_duration": 0.3 },
+    "브랜딩_자연스러운": { "max_gap_seconds": 0.25, "min_silence_duration": 0.5 },
+    "쉬지않고_말하기":  { "max_gap_seconds": 0.05, "min_silence_duration": 0.3 }
+  }
+}
